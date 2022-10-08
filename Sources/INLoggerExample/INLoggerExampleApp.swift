@@ -4,7 +4,7 @@ import SwiftUI
 struct INLoggerExampleApp: App {
 	var body: some Scene {
 		WindowGroup {
-			INLoggerExampleView()
+			ExampleView(viewModel: ExampleViewModel())
 		}
 	}
 }

@@ -23,6 +23,44 @@
 
 /* Begin PBXBuildFile section */
 		264C224128F099A100AF665F /* INCommons in Frameworks */ = {isa = PBXBuildFile; productRef = 264C224028F099A100AF665F /* INCommons */; };
+		264C224528F1548700AF665F /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264C224428F1548700AF665F /* Logger.swift */; };
+		264C226928F155C100AF665F /* LogTagState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264C224A28F155C100AF665F /* LogTagState.swift */; };
+		264C226A28F155C100AF665F /* LogTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264C224B28F155C100AF665F /* LogTag.swift */; };
+		264C226C28F155C100AF665F /* LogFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264C224E28F155C100AF665F /* LogFormatter.swift */; };
+		264C226D28F155C100AF665F /* DevelopLogFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264C224F28F155C100AF665F /* DevelopLogFormatter.swift */; };
+		264C226E28F155C100AF665F /* SimpleLogFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264C225028F155C100AF665F /* SimpleLogFormatter.swift */; };
+		264C227028F155C100AF665F /* LogEntryCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264C225328F155C100AF665F /* LogEntryCreator.swift */; };
+		264C227228F155C100AF665F /* SimpleLogEntryCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264C225528F155C100AF665F /* SimpleLogEntryCreator.swift */; };
+		264C227328F155C100AF665F /* DevelopmentLogFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264C225728F155C100AF665F /* DevelopmentLogFilter.swift */; };
+		264C227428F155C100AF665F /* LogFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264C225828F155C100AF665F /* LogFilter.swift */; };
+		264C227528F155C100AF665F /* ReleaseLogFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264C225928F155C100AF665F /* ReleaseLogFilter.swift */; };
+		264C227628F155C100AF665F /* LogPipeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264C225B28F155C100AF665F /* LogPipeline.swift */; };
+		264C227728F155C100AF665F /* LogLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264C225C28F155C100AF665F /* LogLevel.swift */; };
+		264C227828F155C100AF665F /* LogEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264C225D28F155C100AF665F /* LogEntry.swift */; };
+		264C227928F155C100AF665F /* String+fileNameFromPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264C225F28F155C100AF665F /* String+fileNameFromPath.swift */; };
+		264C227C28F155C100AF665F /* ConsoleLogWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264C226328F155C100AF665F /* ConsoleLogWriter.swift */; };
+		264C227D28F155C100AF665F /* FileLogWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264C226428F155C100AF665F /* FileLogWriter.swift */; };
+		264C227E28F155C100AF665F /* LogWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264C226528F155C100AF665F /* LogWriter.swift */; };
+		264C22A328F159A200AF665F /* ExampleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264C22A228F159A200AF665F /* ExampleViewModel.swift */; };
+		264C22A428F15AAF00AF665F /* LoggerSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264C225128F155C100AF665F /* LoggerSetup.swift */; };
+		264C22A528F17A6D00AF665F /* LogTag+Tags.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264C224928F155C100AF665F /* LogTag+Tags.swift */; };
+		264C22A728F1937200AF665F /* INCommons in Frameworks */ = {isa = PBXBuildFile; productRef = 264C22A628F1937200AF665F /* INCommons */; };
+		264C22A928F1937B00AF665F /* INCommons in Frameworks */ = {isa = PBXBuildFile; productRef = 264C22A828F1937B00AF665F /* INCommons */; };
+		264C22AA28F1969200AF665F /* LoggerConcurrencyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264C228D28F1589900AF665F /* LoggerConcurrencyTests.swift */; };
+		264C22AB28F1969200AF665F /* LoggerCreateEntryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264C228F28F1589900AF665F /* LoggerCreateEntryTests.swift */; };
+		264C22AC28F1969200AF665F /* Mocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264C229228F1589900AF665F /* Mocks.swift */; };
+		264C22AD28F1969200AF665F /* FileLogWriterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264C229428F1589900AF665F /* FileLogWriterTests.swift */; };
+		264C22AE28F1969200AF665F /* LogLevelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264C229028F1589900AF665F /* LogLevelTests.swift */; };
+		264C22AF28F1969200AF665F /* LogPipelineProcessEntryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264C228528F1589900AF665F /* LogPipelineProcessEntryTests.swift */; };
+		264C22B128F1969200AF665F /* ReleaseLogFilterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264C228B28F1589900AF665F /* ReleaseLogFilterTests.swift */; };
+		264C22B228F1969200AF665F /* DevelopLogFormatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264C228228F1589900AF665F /* DevelopLogFormatterTests.swift */; };
+		264C22B328F1969200AF665F /* SimpleLogFormatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264C228328F1589900AF665F /* SimpleLogFormatterTests.swift */; };
+		264C22B428F1969200AF665F /* LoggerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264C228E28F1589900AF665F /* LoggerTests.swift */; };
+		264C22B528F1969200AF665F /* DevelopmentLogFilterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264C228A28F1589900AF665F /* DevelopmentLogFilterTests.swift */; };
+		264C22B628F196AC00AF665F /* LogTag+Tags.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264C224928F155C100AF665F /* LogTag+Tags.swift */; };
+		264C22B728F196B100AF665F /* LoggerSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264C225128F155C100AF665F /* LoggerSetup.swift */; };
+		268330C628F1DBF4005C56F5 /* FileLogWriterError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268330C528F1DBF4005C56F5 /* FileLogWriterError.swift */; };
+		268330CB28F2B210005C56F5 /* FileLogFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268330CA28F2B210005C56F5 /* FileLogFormatter.swift */; };
 		26FCE6D327D1F9C600C229DA /* INLoggerExampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26FCE6D227D1F9C600C229DA /* INLoggerExampleApp.swift */; };
 		26FCE6D727D1F9C700C229DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26FCE6D627D1F9C700C229DA /* Assets.xcassets */; };
 		26FCE6DA27D1F9C700C229DA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26FCE6D927D1F9C700C229DA /* Preview Assets.xcassets */; };
@@ -30,7 +68,7 @@
 		26FCE6F927D1FAD700C229DA /* INLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 26FCE6E927D1FAD600C229DA /* INLogger.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		26FCE6FC27D1FAD700C229DA /* INLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26FCE6E727D1FAD600C229DA /* INLogger.framework */; };
 		26FCE6FD27D1FAD700C229DA /* INLogger.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 26FCE6E727D1FAD600C229DA /* INLogger.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		26FCE7A327D276BF00C229DA /* INLoggerExampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26FCE79B27D276BF00C229DA /* INLoggerExampleView.swift */; };
+		26FCE7A327D276BF00C229DA /* ExampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26FCE79B27D276BF00C229DA /* ExampleView.swift */; };
 		41980954330F1CBB38EA8773 /* Pods_INLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81449F7F71630EA9DE31C59A /* Pods_INLogger.framework */; };
 		5339E4A327FC1BD6009098C8 /* INLoggerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5339E4A227FC1BD6009098C8 /* INLoggerTests.swift */; };
 		5339E4A527FC1C5A009098C8 /* INLoggerVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5339E4A427FC1C5A009098C8 /* INLoggerVersion.swift */; };
@@ -79,6 +117,40 @@
 
 /* Begin PBXFileReference section */
 		1D3CF85261265366D7A83882 /* Pods-INLogger.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-INLogger.debug.xcconfig"; path = "Target Support Files/Pods-INLogger/Pods-INLogger.debug.xcconfig"; sourceTree = "<group>"; };
+		264C224428F1548700AF665F /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		264C224928F155C100AF665F /* LogTag+Tags.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LogTag+Tags.swift"; sourceTree = "<group>"; };
+		264C224A28F155C100AF665F /* LogTagState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogTagState.swift; sourceTree = "<group>"; };
+		264C224B28F155C100AF665F /* LogTag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogTag.swift; sourceTree = "<group>"; };
+		264C224E28F155C100AF665F /* LogFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogFormatter.swift; sourceTree = "<group>"; };
+		264C224F28F155C100AF665F /* DevelopLogFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DevelopLogFormatter.swift; sourceTree = "<group>"; };
+		264C225028F155C100AF665F /* SimpleLogFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleLogFormatter.swift; sourceTree = "<group>"; };
+		264C225128F155C100AF665F /* LoggerSetup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoggerSetup.swift; sourceTree = "<group>"; };
+		264C225328F155C100AF665F /* LogEntryCreator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogEntryCreator.swift; sourceTree = "<group>"; };
+		264C225528F155C100AF665F /* SimpleLogEntryCreator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleLogEntryCreator.swift; sourceTree = "<group>"; };
+		264C225728F155C100AF665F /* DevelopmentLogFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DevelopmentLogFilter.swift; sourceTree = "<group>"; };
+		264C225828F155C100AF665F /* LogFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogFilter.swift; sourceTree = "<group>"; };
+		264C225928F155C100AF665F /* ReleaseLogFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReleaseLogFilter.swift; sourceTree = "<group>"; };
+		264C225B28F155C100AF665F /* LogPipeline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogPipeline.swift; sourceTree = "<group>"; };
+		264C225C28F155C100AF665F /* LogLevel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogLevel.swift; sourceTree = "<group>"; };
+		264C225D28F155C100AF665F /* LogEntry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogEntry.swift; sourceTree = "<group>"; };
+		264C225F28F155C100AF665F /* String+fileNameFromPath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+fileNameFromPath.swift"; sourceTree = "<group>"; };
+		264C226328F155C100AF665F /* ConsoleLogWriter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsoleLogWriter.swift; sourceTree = "<group>"; };
+		264C226428F155C100AF665F /* FileLogWriter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileLogWriter.swift; sourceTree = "<group>"; };
+		264C226528F155C100AF665F /* LogWriter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogWriter.swift; sourceTree = "<group>"; };
+		264C228228F1589900AF665F /* DevelopLogFormatterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DevelopLogFormatterTests.swift; sourceTree = "<group>"; };
+		264C228328F1589900AF665F /* SimpleLogFormatterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleLogFormatterTests.swift; sourceTree = "<group>"; };
+		264C228528F1589900AF665F /* LogPipelineProcessEntryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogPipelineProcessEntryTests.swift; sourceTree = "<group>"; };
+		264C228A28F1589900AF665F /* DevelopmentLogFilterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DevelopmentLogFilterTests.swift; sourceTree = "<group>"; };
+		264C228B28F1589900AF665F /* ReleaseLogFilterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReleaseLogFilterTests.swift; sourceTree = "<group>"; };
+		264C228D28F1589900AF665F /* LoggerConcurrencyTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoggerConcurrencyTests.swift; sourceTree = "<group>"; };
+		264C228E28F1589900AF665F /* LoggerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoggerTests.swift; sourceTree = "<group>"; };
+		264C228F28F1589900AF665F /* LoggerCreateEntryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoggerCreateEntryTests.swift; sourceTree = "<group>"; };
+		264C229028F1589900AF665F /* LogLevelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogLevelTests.swift; sourceTree = "<group>"; };
+		264C229228F1589900AF665F /* Mocks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mocks.swift; sourceTree = "<group>"; };
+		264C229428F1589900AF665F /* FileLogWriterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileLogWriterTests.swift; sourceTree = "<group>"; };
+		264C22A228F159A200AF665F /* ExampleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleViewModel.swift; sourceTree = "<group>"; };
+		268330C528F1DBF4005C56F5 /* FileLogWriterError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileLogWriterError.swift; sourceTree = "<group>"; };
+		268330CA28F2B210005C56F5 /* FileLogFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileLogFormatter.swift; sourceTree = "<group>"; };
 		26FCE6CF27D1F9C600C229DA /* INLoggerExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = INLoggerExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		26FCE6D227D1F9C600C229DA /* INLoggerExampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = INLoggerExampleApp.swift; sourceTree = "<group>"; };
 		26FCE6D627D1F9C700C229DA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -87,7 +159,7 @@
 		26FCE6E927D1FAD600C229DA /* INLogger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = INLogger.h; sourceTree = "<group>"; };
 		26FCE6F027D1FAD700C229DA /* INLoggerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = INLoggerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		26FCE70B27D2137300C229DA /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		26FCE79B27D276BF00C229DA /* INLoggerExampleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = INLoggerExampleView.swift; sourceTree = "<group>"; };
+		26FCE79B27D276BF00C229DA /* ExampleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleView.swift; sourceTree = "<group>"; };
 		2707CDC074ACA2A429686739 /* Pods-INLoggerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-INLoggerTests.debug.xcconfig"; path = "Target Support Files/Pods-INLoggerTests/Pods-INLoggerTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5339E4A227FC1BD6009098C8 /* INLoggerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = INLoggerTests.swift; sourceTree = "<group>"; };
 		5339E4A427FC1C5A009098C8 /* INLoggerVersion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = INLoggerVersion.swift; sourceTree = "<group>"; };
@@ -106,6 +178,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				26FCE6FC27D1FAD700C229DA /* INLogger.framework in Frameworks */,
+				264C22A928F1937B00AF665F /* INCommons in Frameworks */,
 				9A886A5C404411A5FADCA8C6 /* Pods_INLoggerExample.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -124,6 +197,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				26FCE6F127D1FAD700C229DA /* INLogger.framework in Frameworks */,
+				264C22A728F1937200AF665F /* INCommons in Frameworks */,
 				CDEF9325D4D2F1862F39EE62 /* Pods_INLoggerTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -131,6 +205,142 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		264C224328F1547400AF665F /* Logger */ = {
+			isa = PBXGroup;
+			children = (
+				264C225E28F155C100AF665F /* Helper */,
+				264C225228F155C100AF665F /* LogEntryCreator */,
+				264C225A28F155C100AF665F /* LogEssentials */,
+				264C225628F155C100AF665F /* LogFilter */,
+				264C224C28F155C100AF665F /* LogFormatter */,
+				264C224828F155C100AF665F /* LogTag */,
+				264C226228F155C100AF665F /* LogWriter */,
+				264C224428F1548700AF665F /* Logger.swift */,
+			);
+			path = Logger;
+			sourceTree = "<group>";
+		};
+		264C224828F155C100AF665F /* LogTag */ = {
+			isa = PBXGroup;
+			children = (
+				264C224B28F155C100AF665F /* LogTag.swift */,
+				264C224A28F155C100AF665F /* LogTagState.swift */,
+			);
+			path = LogTag;
+			sourceTree = "<group>";
+		};
+		264C224C28F155C100AF665F /* LogFormatter */ = {
+			isa = PBXGroup;
+			children = (
+				264C224F28F155C100AF665F /* DevelopLogFormatter.swift */,
+				268330CA28F2B210005C56F5 /* FileLogFormatter.swift */,
+				264C224E28F155C100AF665F /* LogFormatter.swift */,
+				264C225028F155C100AF665F /* SimpleLogFormatter.swift */,
+			);
+			path = LogFormatter;
+			sourceTree = "<group>";
+		};
+		264C225228F155C100AF665F /* LogEntryCreator */ = {
+			isa = PBXGroup;
+			children = (
+				264C225328F155C100AF665F /* LogEntryCreator.swift */,
+				264C225528F155C100AF665F /* SimpleLogEntryCreator.swift */,
+			);
+			path = LogEntryCreator;
+			sourceTree = "<group>";
+		};
+		264C225628F155C100AF665F /* LogFilter */ = {
+			isa = PBXGroup;
+			children = (
+				264C225728F155C100AF665F /* DevelopmentLogFilter.swift */,
+				264C225828F155C100AF665F /* LogFilter.swift */,
+				264C225928F155C100AF665F /* ReleaseLogFilter.swift */,
+			);
+			path = LogFilter;
+			sourceTree = "<group>";
+		};
+		264C225A28F155C100AF665F /* LogEssentials */ = {
+			isa = PBXGroup;
+			children = (
+				264C225D28F155C100AF665F /* LogEntry.swift */,
+				264C225C28F155C100AF665F /* LogLevel.swift */,
+				264C225B28F155C100AF665F /* LogPipeline.swift */,
+			);
+			path = LogEssentials;
+			sourceTree = "<group>";
+		};
+		264C225E28F155C100AF665F /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				264C225F28F155C100AF665F /* String+fileNameFromPath.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		264C226228F155C100AF665F /* LogWriter */ = {
+			isa = PBXGroup;
+			children = (
+				264C226328F155C100AF665F /* ConsoleLogWriter.swift */,
+				264C226428F155C100AF665F /* FileLogWriter.swift */,
+				268330C528F1DBF4005C56F5 /* FileLogWriterError.swift */,
+				264C226528F155C100AF665F /* LogWriter.swift */,
+			);
+			path = LogWriter;
+			sourceTree = "<group>";
+		};
+		264C228028F1589900AF665F /* LogFormatter */ = {
+			isa = PBXGroup;
+			children = (
+				264C228228F1589900AF665F /* DevelopLogFormatterTests.swift */,
+				264C228328F1589900AF665F /* SimpleLogFormatterTests.swift */,
+			);
+			path = LogFormatter;
+			sourceTree = "<group>";
+		};
+		264C228428F1589900AF665F /* LogPipeline */ = {
+			isa = PBXGroup;
+			children = (
+				264C228528F1589900AF665F /* LogPipelineProcessEntryTests.swift */,
+			);
+			path = LogPipeline;
+			sourceTree = "<group>";
+		};
+		264C228928F1589900AF665F /* LogFilter */ = {
+			isa = PBXGroup;
+			children = (
+				264C228A28F1589900AF665F /* DevelopmentLogFilterTests.swift */,
+				264C228B28F1589900AF665F /* ReleaseLogFilterTests.swift */,
+			);
+			path = LogFilter;
+			sourceTree = "<group>";
+		};
+		264C228C28F1589900AF665F /* Logger */ = {
+			isa = PBXGroup;
+			children = (
+				264C228D28F1589900AF665F /* LoggerConcurrencyTests.swift */,
+				264C228E28F1589900AF665F /* LoggerTests.swift */,
+				264C228F28F1589900AF665F /* LoggerCreateEntryTests.swift */,
+				264C229028F1589900AF665F /* LogLevelTests.swift */,
+			);
+			path = Logger;
+			sourceTree = "<group>";
+		};
+		264C229128F1589900AF665F /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				264C229228F1589900AF665F /* Mocks.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		264C229328F1589900AF665F /* FileLogWriter */ = {
+			isa = PBXGroup;
+			children = (
+				264C229428F1589900AF665F /* FileLogWriterTests.swift */,
+			);
+			path = FileLogWriter;
+			sourceTree = "<group>";
+		};
 		26FCE6C627D1F9C600C229DA = {
 			isa = PBXGroup;
 			children = (
@@ -156,7 +366,10 @@
 		26FCE6D127D1F9C600C229DA /* INLoggerExample */ = {
 			isa = PBXGroup;
 			children = (
-				26FCE79B27D276BF00C229DA /* INLoggerExampleView.swift */,
+				26FCE79B27D276BF00C229DA /* ExampleView.swift */,
+				264C22A228F159A200AF665F /* ExampleViewModel.swift */,
+				264C225128F155C100AF665F /* LoggerSetup.swift */,
+				264C224928F155C100AF665F /* LogTag+Tags.swift */,
 				26FCE6D227D1F9C600C229DA /* INLoggerExampleApp.swift */,
 				26FCE6D627D1F9C700C229DA /* Assets.xcassets */,
 				26FCE6D827D1F9C700C229DA /* Preview Content */,
@@ -192,6 +405,7 @@
 		26FCE6E827D1FAD600C229DA /* INLogger */ = {
 			isa = PBXGroup;
 			children = (
+				264C224328F1547400AF665F /* Logger */,
 				26FCE6E927D1FAD600C229DA /* INLogger.h */,
 				5339E4A427FC1C5A009098C8 /* INLoggerVersion.swift */,
 			);
@@ -201,6 +415,12 @@
 		26FCE6F627D1FAD700C229DA /* INLoggerTests */ = {
 			isa = PBXGroup;
 			children = (
+				264C229328F1589900AF665F /* FileLogWriter */,
+				264C228928F1589900AF665F /* LogFilter */,
+				264C228028F1589900AF665F /* LogFormatter */,
+				264C228C28F1589900AF665F /* Logger */,
+				264C228428F1589900AF665F /* LogPipeline */,
+				264C229128F1589900AF665F /* Mocks */,
 				5339E4A227FC1BD6009098C8 /* INLoggerTests.swift */,
 			);
 			path = INLoggerTests;
@@ -259,6 +479,9 @@
 				26FCE6FB27D1FAD700C229DA /* PBXTargetDependency */,
 			);
 			name = INLoggerExample;
+			packageProductDependencies = (
+				264C22A828F1937B00AF665F /* INCommons */,
+			);
 			productName = INLoggerExample;
 			productReference = 26FCE6CF27D1F9C600C229DA /* INLoggerExample.app */;
 			productType = "com.apple.product-type.application";
@@ -303,6 +526,9 @@
 				26FCE6F527D1FAD700C229DA /* PBXTargetDependency */,
 			);
 			name = INLoggerTests;
+			packageProductDependencies = (
+				264C22A628F1937200AF665F /* INCommons */,
+			);
 			productName = INLoggerTests;
 			productReference = 26FCE6F027D1FAD700C229DA /* INLoggerTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -322,6 +548,7 @@
 					};
 					26FCE6E627D1FAD600C229DA = {
 						CreatedOnToolsVersion = 13.2.1;
+						LastSwiftMigration = 1400;
 					};
 					26FCE6EF27D1FAD700C229DA = {
 						CreatedOnToolsVersion = 13.2.1;
@@ -532,8 +759,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				26FCE7A327D276BF00C229DA /* INLoggerExampleView.swift in Sources */,
+				26FCE7A327D276BF00C229DA /* ExampleView.swift in Sources */,
 				5339E4A627FC1D1F009098C8 /* INLoggerVersion.swift in Sources */,
+				264C22A528F17A6D00AF665F /* LogTag+Tags.swift in Sources */,
+				264C22A328F159A200AF665F /* ExampleViewModel.swift in Sources */,
+				264C22A428F15AAF00AF665F /* LoggerSetup.swift in Sources */,
 				26FCE6D327D1F9C600C229DA /* INLoggerExampleApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -542,6 +772,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				264C226A28F155C100AF665F /* LogTag.swift in Sources */,
+				264C226D28F155C100AF665F /* DevelopLogFormatter.swift in Sources */,
+				264C227E28F155C100AF665F /* LogWriter.swift in Sources */,
+				264C227028F155C100AF665F /* LogEntryCreator.swift in Sources */,
+				264C227C28F155C100AF665F /* ConsoleLogWriter.swift in Sources */,
+				264C227828F155C100AF665F /* LogEntry.swift in Sources */,
+				264C227928F155C100AF665F /* String+fileNameFromPath.swift in Sources */,
+				264C224528F1548700AF665F /* Logger.swift in Sources */,
+				264C227228F155C100AF665F /* SimpleLogEntryCreator.swift in Sources */,
+				264C227528F155C100AF665F /* ReleaseLogFilter.swift in Sources */,
+				268330C628F1DBF4005C56F5 /* FileLogWriterError.swift in Sources */,
+				264C227428F155C100AF665F /* LogFilter.swift in Sources */,
+				268330CB28F2B210005C56F5 /* FileLogFormatter.swift in Sources */,
+				264C227728F155C100AF665F /* LogLevel.swift in Sources */,
+				264C227D28F155C100AF665F /* FileLogWriter.swift in Sources */,
+				264C226C28F155C100AF665F /* LogFormatter.swift in Sources */,
+				264C227628F155C100AF665F /* LogPipeline.swift in Sources */,
+				264C227328F155C100AF665F /* DevelopmentLogFilter.swift in Sources */,
+				264C226E28F155C100AF665F /* SimpleLogFormatter.swift in Sources */,
+				264C226928F155C100AF665F /* LogTagState.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -549,8 +799,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				264C22B128F1969200AF665F /* ReleaseLogFilterTests.swift in Sources */,
+				264C22AE28F1969200AF665F /* LogLevelTests.swift in Sources */,
+				264C22B428F1969200AF665F /* LoggerTests.swift in Sources */,
+				264C22AB28F1969200AF665F /* LoggerCreateEntryTests.swift in Sources */,
+				264C22B628F196AC00AF665F /* LogTag+Tags.swift in Sources */,
 				5339E4A527FC1C5A009098C8 /* INLoggerVersion.swift in Sources */,
+				264C22AD28F1969200AF665F /* FileLogWriterTests.swift in Sources */,
 				5339E4A327FC1BD6009098C8 /* INLoggerTests.swift in Sources */,
+				264C22B328F1969200AF665F /* SimpleLogFormatterTests.swift in Sources */,
+				264C22AF28F1969200AF665F /* LogPipelineProcessEntryTests.swift in Sources */,
+				264C22B228F1969200AF665F /* DevelopLogFormatterTests.swift in Sources */,
+				264C22B528F1969200AF665F /* DevelopmentLogFilterTests.swift in Sources */,
+				264C22B728F196B100AF665F /* LoggerSetup.swift in Sources */,
+				264C22AA28F1969200AF665F /* LoggerConcurrencyTests.swift in Sources */,
+				264C22AC28F1969200AF665F /* Mocks.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -695,6 +958,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 67BF383CCDD0E96374B9F2A1 /* Pods-INLoggerExample.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -708,7 +972,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -726,6 +990,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D8B4F37595AC576D2D0591E2 /* Pods-INLoggerExample.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -739,7 +1004,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -758,6 +1023,7 @@
 			baseConfigurationReference = 1D3CF85261265366D7A83882 /* Pods-INLogger.debug.xcconfig */;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -768,7 +1034,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -779,6 +1045,8 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_STRICT_CONCURRENCY = complete;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -791,6 +1059,7 @@
 			baseConfigurationReference = D2E8259FAF6787CBFA87BD66 /* Pods-INLogger.release.xcconfig */;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -801,7 +1070,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -812,6 +1081,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_STRICT_CONCURRENCY = complete;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -823,11 +1093,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2707CDC074ACA2A429686739 /* Pods-INLoggerTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = H6T8HJZGHY;
 				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -847,11 +1119,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 982FA608E68A4D9B2F4EE242 /* Pods-INLoggerTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = H6T8HJZGHY;
 				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -951,6 +1225,16 @@
 
 /* Begin XCSwiftPackageProductDependency section */
 		264C224028F099A100AF665F /* INCommons */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 264C223F28F099A100AF665F /* XCRemoteSwiftPackageReference "INCommons" */;
+			productName = INCommons;
+		};
+		264C22A628F1937200AF665F /* INCommons */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 264C223F28F099A100AF665F /* XCRemoteSwiftPackageReference "INCommons" */;
+			productName = INCommons;
+		};
+		264C22A828F1937B00AF665F /* INCommons */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 264C223F28F099A100AF665F /* XCRemoteSwiftPackageReference "INCommons" */;
 			productName = INCommons;
