@@ -6,6 +6,6 @@ public final class ConsoleLogWriter: LogWriter {
 	public init() {}
 
 	public func write(_ message: String) {
-		print(message)
+		NSLog(message)
 	}
 }
