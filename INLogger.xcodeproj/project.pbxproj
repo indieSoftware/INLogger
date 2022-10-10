@@ -70,9 +70,6 @@
 		26FCE6FD27D1FAD700C229DA /* INLogger.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 26FCE6E727D1FAD600C229DA /* INLogger.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		26FCE7A327D276BF00C229DA /* ExampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26FCE79B27D276BF00C229DA /* ExampleView.swift */; };
 		41980954330F1CBB38EA8773 /* Pods_INLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81449F7F71630EA9DE31C59A /* Pods_INLogger.framework */; };
-		5339E4A327FC1BD6009098C8 /* INLoggerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5339E4A227FC1BD6009098C8 /* INLoggerTests.swift */; };
-		5339E4A527FC1C5A009098C8 /* INLoggerVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5339E4A427FC1C5A009098C8 /* INLoggerVersion.swift */; };
-		5339E4A627FC1D1F009098C8 /* INLoggerVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5339E4A427FC1C5A009098C8 /* INLoggerVersion.swift */; };
 		9A886A5C404411A5FADCA8C6 /* Pods_INLoggerExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB55D7ABEC1132CCF782889E /* Pods_INLoggerExample.framework */; };
 		CDEF9325D4D2F1862F39EE62 /* Pods_INLoggerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCC8E65647721DFC4E9B27B3 /* Pods_INLoggerTests.framework */; };
 /* End PBXBuildFile section */
@@ -161,8 +158,6 @@
 		26FCE70B27D2137300C229DA /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		26FCE79B27D276BF00C229DA /* ExampleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleView.swift; sourceTree = "<group>"; };
 		2707CDC074ACA2A429686739 /* Pods-INLoggerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-INLoggerTests.debug.xcconfig"; path = "Target Support Files/Pods-INLoggerTests/Pods-INLoggerTests.debug.xcconfig"; sourceTree = "<group>"; };
-		5339E4A227FC1BD6009098C8 /* INLoggerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = INLoggerTests.swift; sourceTree = "<group>"; };
-		5339E4A427FC1C5A009098C8 /* INLoggerVersion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = INLoggerVersion.swift; sourceTree = "<group>"; };
 		67BF383CCDD0E96374B9F2A1 /* Pods-INLoggerExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-INLoggerExample.debug.xcconfig"; path = "Target Support Files/Pods-INLoggerExample/Pods-INLoggerExample.debug.xcconfig"; sourceTree = "<group>"; };
 		81449F7F71630EA9DE31C59A /* Pods_INLogger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_INLogger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		982FA608E68A4D9B2F4EE242 /* Pods-INLoggerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-INLoggerTests.release.xcconfig"; path = "Target Support Files/Pods-INLoggerTests/Pods-INLoggerTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -407,7 +402,6 @@
 			children = (
 				264C224328F1547400AF665F /* Logger */,
 				26FCE6E927D1FAD600C229DA /* INLogger.h */,
-				5339E4A427FC1C5A009098C8 /* INLoggerVersion.swift */,
 			);
 			path = INLogger;
 			sourceTree = "<group>";
@@ -421,7 +415,6 @@
 				264C228C28F1589900AF665F /* Logger */,
 				264C228428F1589900AF665F /* LogPipeline */,
 				264C229128F1589900AF665F /* Mocks */,
-				5339E4A227FC1BD6009098C8 /* INLoggerTests.swift */,
 			);
 			path = INLoggerTests;
 			sourceTree = "<group>";
@@ -760,7 +753,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				26FCE7A327D276BF00C229DA /* ExampleView.swift in Sources */,
-				5339E4A627FC1D1F009098C8 /* INLoggerVersion.swift in Sources */,
 				264C22A528F17A6D00AF665F /* LogTag+Tags.swift in Sources */,
 				264C22A328F159A200AF665F /* ExampleViewModel.swift in Sources */,
 				264C22A428F15AAF00AF665F /* LoggerSetup.swift in Sources */,
@@ -804,9 +796,7 @@
 				264C22B428F1969200AF665F /* LoggerTests.swift in Sources */,
 				264C22AB28F1969200AF665F /* LoggerCreateEntryTests.swift in Sources */,
 				264C22B628F196AC00AF665F /* LogTag+Tags.swift in Sources */,
-				5339E4A527FC1C5A009098C8 /* INLoggerVersion.swift in Sources */,
 				264C22AD28F1969200AF665F /* FileLogWriterTests.swift in Sources */,
-				5339E4A327FC1BD6009098C8 /* INLoggerTests.swift in Sources */,
 				264C22B328F1969200AF665F /* SimpleLogFormatterTests.swift in Sources */,
 				264C22AF28F1969200AF665F /* LogPipelineProcessEntryTests.swift in Sources */,
 				264C22B228F1969200AF665F /* DevelopLogFormatterTests.swift in Sources */,
