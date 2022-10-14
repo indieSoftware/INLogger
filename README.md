@@ -4,6 +4,52 @@ A configurable logger.
  
 ## Overview
 
+Create a logger and configure its behavior with pipelines by using different filter, formatter and writer.
+
+```
+// A logger which prints unformatted log messages to the console
+let consoleLogPipeline = LogPipeline(
+	filter: DevelopmentLogFilter(),
+	formatter: SimpleLogFormatter(),
+	writer: [ConsoleLogWriter()]
+)
+Logger.shared = Logger(
+	entryCreator: SimpleLogEntryCreator(),
+	pipelines: [consoleLogPipeline]
+)
+```
+
+Use the shared logger to log any log messages in code with one of the common severities:
+
+```
+Logger.debug("A debug message")
+Logger.info("An info message")
+Logger.warn("A warning message")
+Logger.error("An error message")
+Logger.fatal("A fatal error message")
+```
+
+Define custom tags and use them to tag log messages for easier following or enabling/disabling log messages on a tag level.
+
+```
+extension LogTag {
+	static let breadcrumb = LogTag(state: .enabled, name: "Breadcrumb", abbreviation: "🍞")
+	static let general = LogTag(state: .enabled, name: "General", abbreviation: "⭐️")
+	static let myFeature = LogTag(state: .disabled, name: "MyFeature", abbreviation: "💝")
+}
+
+Logger.debug("A general log message", tag: .general)
+Logger.debug("A multi-tag log message", tags: [.breadcrumb, .myFeature])
+```
+
+Implement own custom filters, formatters and writers to customzie the logging behavior according to the project's needs and to get beatiful and helpful log messages.
+
+```
+2022-10-14 09:39:57 INLoggerExample 💬🍞💝 [ExampleViewModel.swift:45] - A log message
+```
+
+## Structure
+
 This logger supports both, a log severity like `debug`, `info`, `warn`, `error` and `fatal` as well as tags which can be customized to mark message with those tags or to disable message on a top level.
 
 For example, it's possible to provide tags for each feautre in the app and log a message with the corresponding tag in which feature the log has been dispatched. On the scope of the tag definition it's then easy to enable or disable all logs with that tag.
@@ -130,3 +176,33 @@ The `ConsoleLogWriter` simply writes the formatted log message to the console vi
 The `FileLogWriter` writes the formatted log messages to a file. On each creation of an instance the log file will be rotated to a backup version. That way on each app start the old log file will be backed up and can be send to user support when a crash has occurred while the current log file can be send when the user wants to report a bug.
 
 The `FileLogWriter` is kind of limited with only one backup file. Theoretically this can lead to an infinitve growing log file. Therefore, if a more robust or individual solution is needed here, just implement the `LogWriter` protocol and implement a custom solution for it.
+
+### Log Tags
+
+Tags are optional, but a helpful addition to group logs and filter them if needed. 
+
+The library comes with the structure of tags, but with no pre-defined tags. That means, to use the tag system some tags have to be defined first. Do this by extending the the `LogTag` struct with some constants:
+
+```
+extension LogTag {
+	static let unitTest = LogTag(state: .forceDisabled, name: "UnitTest", abbreviation: "🐞")
+	static let uiTest = LogTag(state: .enabled, name: "UITest", abbreviation: "🤖")
+
+	static let breadcrumb = LogTag(state: .enabled, name: "Breadcrumb", abbreviation: "🍞")
+	static let general = LogTag(state: .enabled, name: "General", abbreviation: "⭐️")
+	static let myFeature = LogTag(state: .disabled, name: "MyFeature", abbreviation: "💝")
+}
+```
+
+The defined tags can then be used along with each log statement to tag the message.
+
+```
+Logger.debug("A general log message", tag: .general)
+Logger.debug("A multi-tag log message", tags: [.breadcrumb, .myFeature])
+```
+
+Usually tags are used to associate log statements to features. For example, a log message in a screen of a feature should be marked with the corresponding tag, e.g. `myFeature`. When this feature is currently not under development then a developer usually is not interested in logs of that feature and to prevent to clutter the console with such non-relevant logs the whole tag can be marked as `disabled` to prevent such tagged logs to be logged.
+
+It's possible to associate a log statement with multiple tags, i.e. when a message is not only part of a feature, but should also be marked as a breadcrumb. Breadcrumbs are user-initated actions which can be followed to trace bugs. For example, when a user complains about a bug then a developer can follow all breadcrumbs to see which actions the particular user has done to reproduce the behavior.
+
+Whether a log statement is logged or not, whether a tag is taken into consideration for that or not, that's defined in the corresponding implementation of the `LogFilter`.
