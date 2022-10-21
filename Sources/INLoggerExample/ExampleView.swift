@@ -34,7 +34,7 @@ struct ExampleView: View {
 						Text("Disable logger")
 					})
 
-					Spacer().frame(height: 50)
+					Spacer().frame(height: 30)
 				}
 
 				Group {
@@ -44,12 +44,16 @@ struct ExampleView: View {
 					Toggle("\(LogTag.disabledTag.abbreviation ?? "?") Disabled tag", isOn: $viewModel.disabledTagEnabled)
 					Toggle("\(LogTag.forceDisabledTag.abbreviation ?? "?") Force-disabled tag", isOn: $viewModel.forceDisabledTagEnabled)
 
-					Spacer().frame(height: 20)
+					Spacer().frame(height: 16)
 
 					TextField("Enter log message...", text: $viewModel.logMessageText)
 						.textFieldStyle(RoundedBorderTextFieldStyle())
 
-					Spacer().frame(height: 20)
+					Spacer().frame(height: 16)
+
+					Toggle("☠️ Cash app after log", isOn: $viewModel.crashAppAfterLog)
+
+					Spacer().frame(height: 16)
 				}
 
 				Group {

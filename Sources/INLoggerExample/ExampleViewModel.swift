@@ -35,26 +35,43 @@ class ExampleViewModel: ObservableObject {
 	@Published var disabledTagEnabled: Bool = false
 	@Published var forceDisabledTagEnabled: Bool = false
 
+	@Published var crashAppAfterLog: Bool = false
+
 	@Published var logMessageText: String = "Log message"
 
 	func logDebug() {
 		Logger.debug(logMessageText, tags: gatherTags())
+		if crashAppAfterLog {
+			fatalError("Crash after debug log")
+		}
 	}
 
 	func logInfo() {
 		Logger.info(logMessageText, tags: gatherTags())
+		if crashAppAfterLog {
+			fatalError("Crash after info log")
+		}
 	}
 
 	func logWarn() {
 		Logger.warn(logMessageText, tags: gatherTags())
+		if crashAppAfterLog {
+			fatalError("Crash after warn log")
+		}
 	}
 
 	func logError() {
 		Logger.error(logMessageText, tags: gatherTags())
+		if crashAppAfterLog {
+			fatalError("Crash after error log")
+		}
 	}
 
 	func logFatal() {
 		Logger.fatal(logMessageText, tags: gatherTags())
+		if crashAppAfterLog {
+			fatalError("Crash after fatal log")
+		}
 	}
 
 	private func gatherTags() -> [LogTag] {

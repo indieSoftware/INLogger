@@ -57,17 +57,37 @@ public final class Logger {
 	 - parameter message: The message to log.
 	 - parameter level: The severity of the log message.
 	 - parameter tags: An array of associated log tags for this message.
+	 - parameter processOnThread: When set to true then the log entry will be processed by a queue immediately on
+	 the same thread. When set to false then the log entry will be passed to the pipeline on a background thread.
+	 Defaults to false because usually a log entry should be processed on a background thread to not block the current thread's
+	 execution, however, when a crash is imminent then a background thread might be too late and the log might be lost.
+	 Therefore, in such circumstances, e.g. for logs with a fatal severity, it's possible to by-pass the background queue by
+	 providing true as parameter.
 	 - parameter file: The file's name where the log message has been dispatched. Will be automatically set.
 	 - parameter function: The function's name where the log message has been dispatched. Will be automatically set.
 	 - parameter line: The line number in the file where the log message has been dispatched. Will be automatically set.
 	 */
-	public func log(message: String, level: LogLevel, tags: [LogTag], file: String = #file, function: String = #function, line: Int32 = #line) {
+	public func log(
+		message: String,
+		level: LogLevel,
+		tags: [LogTag],
+		processOnThread: Bool = false,
+		file: String = #file,
+		function: String = #function,
+		line: Int32 = #line
+	) {
 		let entry = entryCreator.createEntry(message: message, level: level, tags: tags, file: file, function: function, line: line)
 
 		let capturedPipelines = pipelines
-		processingQueue.async {
+		if processOnThread {
 			capturedPipelines.forEach { pipeline in
 				pipeline.processEntry(entry)
+			}
+		} else {
+			processingQueue.async {
+				capturedPipelines.forEach { pipeline in
+					pipeline.processEntry(entry)
+				}
 			}
 		}
 	}
@@ -107,11 +127,11 @@ public final class Logger {
 	}
 
 	public func fatal(_ message: String, tags: [LogTag] = [], file: String = #file, function: String = #function, line: Int32 = #line) {
-		log(message: message, level: .fatal, tags: tags, file: file, function: function, line: line)
+		log(message: message, level: .fatal, tags: tags, processOnThread: true, file: file, function: function, line: line)
 	}
 
 	public func fatal(_ message: String, tag: LogTag, file: String = #file, function: String = #function, line: Int32 = #line) {
-		log(message: message, level: .fatal, tags: [tag], file: file, function: function, line: line)
+		log(message: message, level: .fatal, tags: [tag], processOnThread: true, file: file, function: function, line: line)
 	}
 
 	// MARK: - Static methods
@@ -149,10 +169,10 @@ public final class Logger {
 	}
 
 	public static func fatal(_ message: String, tags: [LogTag] = [], file: String = #file, function: String = #function, line: Int32 = #line) {
-		Logger.shared.log(message: message, level: .fatal, tags: tags, file: file, function: function, line: line)
+		Logger.shared.log(message: message, level: .fatal, tags: tags, processOnThread: true, file: file, function: function, line: line)
 	}
 
 	public static func fatal(_ message: String, tag: LogTag, file: String = #file, function: String = #function, line: Int32 = #line) {
-		Logger.shared.log(message: message, level: .fatal, tags: [tag], file: file, function: function, line: line)
+		Logger.shared.log(message: message, level: .fatal, tags: [tag], processOnThread: true, file: file, function: function, line: line)
 	}
 }
