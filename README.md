@@ -133,7 +133,7 @@ Logger.shared = Logger(
 )
 ```
 
-By using different combinations of filters, fromatters and writers it's possible to configure the logger. And when the provided filters, formatters and writers are not enough then it's possible to create own filters, formatters and writers by simply implementing the provided protocols.
+By using different combinations of filters, formatters and writers it's possible to configure the logger. And when the provided filters, formatters and writers are not enough then it's possible to create own filters, formatters and writers by simply implementing the provided protocols.
 
 ### The filters
 

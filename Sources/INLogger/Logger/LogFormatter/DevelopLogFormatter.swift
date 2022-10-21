@@ -25,6 +25,6 @@ public final class DevelopLogFormatter: LogFormatter {
 	}
 
 	private func stringForTags(_ tags: [LogTag]) -> String {
-		tags.map(\.abbreviation).joined()
+		tags.compactMap(\.abbreviation).joined()
 	}
 }

@@ -38,11 +38,11 @@ struct ExampleView: View {
 				}
 
 				Group {
-					Toggle("\(LogTag.breadcrumb.abbreviation) Breadcrumb (enabled)", isOn: $viewModel.breadcrumbTagEnabled)
-					Toggle("\(LogTag.general.abbreviation) General (enabled tag)", isOn: $viewModel.generalTagEnabled)
-					Toggle("\(LogTag.myFeature.abbreviation) MyFeature (enabled tag)", isOn: $viewModel.myFeatureTagEnabled)
-					Toggle("\(LogTag.disabledTag.abbreviation) Disabled tag", isOn: $viewModel.disabledTagEnabled)
-					Toggle("\(LogTag.forceDisabledTag.abbreviation) Force-disabled tag", isOn: $viewModel.forceDisabledTagEnabled)
+					Toggle("\(LogTag.breadcrumb.abbreviation ?? "?") Breadcrumb (enabled)", isOn: $viewModel.breadcrumbTagEnabled)
+					Toggle("\(LogTag.general.abbreviation ?? "?") General (enabled tag)", isOn: $viewModel.generalTagEnabled)
+					Toggle("\(LogTag.myFeature.abbreviation ?? "?") MyFeature (enabled tag)", isOn: $viewModel.myFeatureTagEnabled)
+					Toggle("\(LogTag.disabledTag.abbreviation ?? "?") Disabled tag", isOn: $viewModel.disabledTagEnabled)
+					Toggle("\(LogTag.forceDisabledTag.abbreviation ?? "?") Force-disabled tag", isOn: $viewModel.forceDisabledTagEnabled)
 
 					Spacer().frame(height: 20)
 

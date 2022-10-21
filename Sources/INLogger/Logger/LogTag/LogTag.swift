@@ -7,7 +7,7 @@ public struct LogTag: Sendable {
 	/// The tag's representation name.
 	public let name: String
 	/// The tag's short representation.
-	public let abbreviation: String
+	public let abbreviation: String?
 
 	/**
 	 Creates a log tag.
@@ -19,7 +19,7 @@ public struct LogTag: Sendable {
 	 - parameter abbreviation: A short indicator for the tag usually an emoji
 	 which can be used by the logger's `LogFormatter` for a compressed output form.
 	 */
-	public init(state: LogTagState, name: String, abbreviation: String) {
+	public init(state: LogTagState, name: String, abbreviation: String? = nil) {
 		self.state = state
 		self.name = name
 		self.abbreviation = abbreviation
