@@ -22,6 +22,7 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		260A462D29031FD7004D10F8 /* LoggerPipeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260A462C29031FD7004D10F8 /* LoggerPipeline.swift */; };
 		264C224128F099A100AF665F /* INCommons in Frameworks */ = {isa = PBXBuildFile; productRef = 264C224028F099A100AF665F /* INCommons */; };
 		264C224528F1548700AF665F /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264C224428F1548700AF665F /* Logger.swift */; };
 		264C226928F155C100AF665F /* LogTagState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264C224A28F155C100AF665F /* LogTagState.swift */; };
@@ -114,6 +115,7 @@
 
 /* Begin PBXFileReference section */
 		1D3CF85261265366D7A83882 /* Pods-INLogger.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-INLogger.debug.xcconfig"; path = "Target Support Files/Pods-INLogger/Pods-INLogger.debug.xcconfig"; sourceTree = "<group>"; };
+		260A462C29031FD7004D10F8 /* LoggerPipeline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerPipeline.swift; sourceTree = "<group>"; };
 		264C224428F1548700AF665F /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		264C224928F155C100AF665F /* LogTag+Tags.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LogTag+Tags.swift"; sourceTree = "<group>"; };
 		264C224A28F155C100AF665F /* LogTagState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogTagState.swift; sourceTree = "<group>"; };
@@ -260,6 +262,7 @@
 				264C225D28F155C100AF665F /* LogEntry.swift */,
 				264C225C28F155C100AF665F /* LogLevel.swift */,
 				264C225B28F155C100AF665F /* LogPipeline.swift */,
+				260A462C29031FD7004D10F8 /* LoggerPipeline.swift */,
 			);
 			path = LogEssentials;
 			sourceTree = "<group>";
@@ -770,6 +773,7 @@
 				264C227028F155C100AF665F /* LogEntryCreator.swift in Sources */,
 				264C227C28F155C100AF665F /* ConsoleLogWriter.swift in Sources */,
 				264C227828F155C100AF665F /* LogEntry.swift in Sources */,
+				260A462D29031FD7004D10F8 /* LoggerPipeline.swift in Sources */,
 				264C227928F155C100AF665F /* String+fileNameFromPath.swift in Sources */,
 				264C224528F1548700AF665F /* Logger.swift in Sources */,
 				264C227228F155C100AF665F /* SimpleLogEntryCreator.swift in Sources */,

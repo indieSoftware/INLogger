@@ -25,7 +25,7 @@ public final class Logger {
 	/// The creator instance which is used to create raw log entries before passing them to the pipelines.
 	private let entryCreator: LogEntryCreator
 	/// The pipelines used to process any raw log entries on a background thread.
-	private let pipelines: [LogPipeline]
+	private let pipelines: [LoggerPipeline]
 
 	/**
 	 Initializes a logger with some pipelines.
@@ -42,7 +42,7 @@ public final class Logger {
 	 - parameter pipelines: All pipelines which should process the logs.
 	 If no pipeline is passed then no log will be processed and thus nothing will be logged.
 	 */
-	public init(entryCreator: LogEntryCreator, pipelines: [LogPipeline]) {
+	public init(entryCreator: LogEntryCreator, pipelines: [LoggerPipeline]) {
 		self.entryCreator = entryCreator
 		self.pipelines = pipelines
 	}

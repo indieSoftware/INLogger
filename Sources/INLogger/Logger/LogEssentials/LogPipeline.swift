@@ -1,8 +1,8 @@
 import Foundation
 
-/// A pipeline for the `Logger` is a combination of a
+/// A concrete pipeline implementation for the `Logger` is a combination of a
 /// filter, formatter and writer to process a logged message entry.
-public struct LogPipeline: Sendable {
+public struct LogPipeline: LoggerPipeline, Sendable {
 	/// The filter which determines if a log message should be processed or not.
 	let filter: LogFilter
 	/// The formatter which formats a log message entry into a string suitable for the writer.
@@ -45,7 +45,7 @@ public struct LogPipeline: Sendable {
 
 	 - parameter entry: The log info to process.
 	 */
-	func processEntry(_ entry: LogEntry) {
+	public func processEntry(_ entry: LogEntry) {
 		// Ignore log entry when the filter wants to filter it out.
 		guard filter.shouldEntryBeLogged(entry) else {
 			return
