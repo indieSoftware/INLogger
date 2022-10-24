@@ -1,0 +1,1239 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		26FCE71027D215C800C229DA /* SwiftFormat */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 26FCE71127D215C800C229DA /* Build configuration list for PBXAggregateTarget "SwiftFormat" */;
+			buildPhases = (
+				26FCE71427D215DD00C229DA /* Extract Swift Version Number */,
+				26FCE71527D215F400C229DA /* SwiftFormat */,
+			);
+			dependencies = (
+			);
+			name = SwiftFormat;
+			productName = SwiftFormat;
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		260A462D29031FD7004D10F8 /* LoggerPipeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260A462C29031FD7004D10F8 /* LoggerPipeline.swift */; };
+		264C224128F099A100AF665F /* INCommons in Frameworks */ = {isa = PBXBuildFile; productRef = 264C224028F099A100AF665F /* INCommons */; };
+		264C224528F1548700AF665F /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264C224428F1548700AF665F /* Logger.swift */; };
+		264C226928F155C100AF665F /* LogTagState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264C224A28F155C100AF665F /* LogTagState.swift */; };
+		264C226A28F155C100AF665F /* LogTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264C224B28F155C100AF665F /* LogTag.swift */; };
+		264C226C28F155C100AF665F /* LogFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264C224E28F155C100AF665F /* LogFormatter.swift */; };
+		264C226D28F155C100AF665F /* DevelopLogFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264C224F28F155C100AF665F /* DevelopLogFormatter.swift */; };
+		264C226E28F155C100AF665F /* SimpleLogFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264C225028F155C100AF665F /* SimpleLogFormatter.swift */; };
+		264C227028F155C100AF665F /* LogEntryCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264C225328F155C100AF665F /* LogEntryCreator.swift */; };
+		264C227228F155C100AF665F /* SimpleLogEntryCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264C225528F155C100AF665F /* SimpleLogEntryCreator.swift */; };
+		264C227328F155C100AF665F /* DevelopmentLogFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264C225728F155C100AF665F /* DevelopmentLogFilter.swift */; };
+		264C227428F155C100AF665F /* LogFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264C225828F155C100AF665F /* LogFilter.swift */; };
+		264C227528F155C100AF665F /* ReleaseLogFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264C225928F155C100AF665F /* ReleaseLogFilter.swift */; };
+		264C227628F155C100AF665F /* LogPipeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264C225B28F155C100AF665F /* LogPipeline.swift */; };
+		264C227728F155C100AF665F /* LogLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264C225C28F155C100AF665F /* LogLevel.swift */; };
+		264C227828F155C100AF665F /* LogEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264C225D28F155C100AF665F /* LogEntry.swift */; };
+		264C227928F155C100AF665F /* String+fileNameFromPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264C225F28F155C100AF665F /* String+fileNameFromPath.swift */; };
+		264C227C28F155C100AF665F /* ConsoleLogWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264C226328F155C100AF665F /* ConsoleLogWriter.swift */; };
+		264C227D28F155C100AF665F /* FileLogWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264C226428F155C100AF665F /* FileLogWriter.swift */; };
+		264C227E28F155C100AF665F /* LogWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264C226528F155C100AF665F /* LogWriter.swift */; };
+		264C22A328F159A200AF665F /* ExampleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264C22A228F159A200AF665F /* ExampleViewModel.swift */; };
+		264C22A428F15AAF00AF665F /* LoggerSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264C225128F155C100AF665F /* LoggerSetup.swift */; };
+		264C22A528F17A6D00AF665F /* LogTag+Tags.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264C224928F155C100AF665F /* LogTag+Tags.swift */; };
+		264C22A728F1937200AF665F /* INCommons in Frameworks */ = {isa = PBXBuildFile; productRef = 264C22A628F1937200AF665F /* INCommons */; };
+		264C22A928F1937B00AF665F /* INCommons in Frameworks */ = {isa = PBXBuildFile; productRef = 264C22A828F1937B00AF665F /* INCommons */; };
+		264C22AA28F1969200AF665F /* LoggerConcurrencyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264C228D28F1589900AF665F /* LoggerConcurrencyTests.swift */; };
+		264C22AB28F1969200AF665F /* LoggerCreateEntryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264C228F28F1589900AF665F /* LoggerCreateEntryTests.swift */; };
+		264C22AC28F1969200AF665F /* Mocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264C229228F1589900AF665F /* Mocks.swift */; };
+		264C22AD28F1969200AF665F /* FileLogWriterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264C229428F1589900AF665F /* FileLogWriterTests.swift */; };
+		264C22AE28F1969200AF665F /* LogLevelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264C229028F1589900AF665F /* LogLevelTests.swift */; };
+		264C22AF28F1969200AF665F /* LogPipelineProcessEntryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264C228528F1589900AF665F /* LogPipelineProcessEntryTests.swift */; };
+		264C22B128F1969200AF665F /* ReleaseLogFilterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264C228B28F1589900AF665F /* ReleaseLogFilterTests.swift */; };
+		264C22B228F1969200AF665F /* DevelopLogFormatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264C228228F1589900AF665F /* DevelopLogFormatterTests.swift */; };
+		264C22B328F1969200AF665F /* SimpleLogFormatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264C228328F1589900AF665F /* SimpleLogFormatterTests.swift */; };
+		264C22B428F1969200AF665F /* LoggerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264C228E28F1589900AF665F /* LoggerTests.swift */; };
+		264C22B528F1969200AF665F /* DevelopmentLogFilterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264C228A28F1589900AF665F /* DevelopmentLogFilterTests.swift */; };
+		264C22B628F196AC00AF665F /* LogTag+Tags.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264C224928F155C100AF665F /* LogTag+Tags.swift */; };
+		264C22B728F196B100AF665F /* LoggerSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264C225128F155C100AF665F /* LoggerSetup.swift */; };
+		268330C628F1DBF4005C56F5 /* FileLogWriterError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268330C528F1DBF4005C56F5 /* FileLogWriterError.swift */; };
+		268330CB28F2B210005C56F5 /* FileLogFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268330CA28F2B210005C56F5 /* FileLogFormatter.swift */; };
+		26FCE6D327D1F9C600C229DA /* INLoggerExampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26FCE6D227D1F9C600C229DA /* INLoggerExampleApp.swift */; };
+		26FCE6D727D1F9C700C229DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26FCE6D627D1F9C700C229DA /* Assets.xcassets */; };
+		26FCE6DA27D1F9C700C229DA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 26FCE6D927D1F9C700C229DA /* Preview Assets.xcassets */; };
+		26FCE6F127D1FAD700C229DA /* INLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26FCE6E727D1FAD600C229DA /* INLogger.framework */; };
+		26FCE6F927D1FAD700C229DA /* INLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 26FCE6E927D1FAD600C229DA /* INLogger.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		26FCE6FC27D1FAD700C229DA /* INLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26FCE6E727D1FAD600C229DA /* INLogger.framework */; };
+		26FCE6FD27D1FAD700C229DA /* INLogger.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 26FCE6E727D1FAD600C229DA /* INLogger.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		26FCE7A327D276BF00C229DA /* ExampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26FCE79B27D276BF00C229DA /* ExampleView.swift */; };
+		41980954330F1CBB38EA8773 /* Pods_INLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81449F7F71630EA9DE31C59A /* Pods_INLogger.framework */; };
+		9A886A5C404411A5FADCA8C6 /* Pods_INLoggerExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB55D7ABEC1132CCF782889E /* Pods_INLoggerExample.framework */; };
+		CDEF9325D4D2F1862F39EE62 /* Pods_INLoggerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCC8E65647721DFC4E9B27B3 /* Pods_INLoggerTests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		26FCE6F227D1FAD700C229DA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 26FCE6C727D1F9C600C229DA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 26FCE6E627D1FAD600C229DA;
+			remoteInfo = INLogger;
+		};
+		26FCE6F427D1FAD700C229DA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 26FCE6C727D1F9C600C229DA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 26FCE6CE27D1F9C600C229DA;
+			remoteInfo = INLoggerExample;
+		};
+		26FCE6FA27D1FAD700C229DA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 26FCE6C727D1F9C600C229DA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 26FCE6E627D1FAD600C229DA;
+			remoteInfo = INLogger;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		26FCE70127D1FAD700C229DA /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				26FCE6FD27D1FAD700C229DA /* INLogger.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		1D3CF85261265366D7A83882 /* Pods-INLogger.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-INLogger.debug.xcconfig"; path = "Target Support Files/Pods-INLogger/Pods-INLogger.debug.xcconfig"; sourceTree = "<group>"; };
+		260A462C29031FD7004D10F8 /* LoggerPipeline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggerPipeline.swift; sourceTree = "<group>"; };
+		264C224428F1548700AF665F /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		264C224928F155C100AF665F /* LogTag+Tags.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LogTag+Tags.swift"; sourceTree = "<group>"; };
+		264C224A28F155C100AF665F /* LogTagState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogTagState.swift; sourceTree = "<group>"; };
+		264C224B28F155C100AF665F /* LogTag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogTag.swift; sourceTree = "<group>"; };
+		264C224E28F155C100AF665F /* LogFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogFormatter.swift; sourceTree = "<group>"; };
+		264C224F28F155C100AF665F /* DevelopLogFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DevelopLogFormatter.swift; sourceTree = "<group>"; };
+		264C225028F155C100AF665F /* SimpleLogFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleLogFormatter.swift; sourceTree = "<group>"; };
+		264C225128F155C100AF665F /* LoggerSetup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoggerSetup.swift; sourceTree = "<group>"; };
+		264C225328F155C100AF665F /* LogEntryCreator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogEntryCreator.swift; sourceTree = "<group>"; };
+		264C225528F155C100AF665F /* SimpleLogEntryCreator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleLogEntryCreator.swift; sourceTree = "<group>"; };
+		264C225728F155C100AF665F /* DevelopmentLogFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DevelopmentLogFilter.swift; sourceTree = "<group>"; };
+		264C225828F155C100AF665F /* LogFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogFilter.swift; sourceTree = "<group>"; };
+		264C225928F155C100AF665F /* ReleaseLogFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReleaseLogFilter.swift; sourceTree = "<group>"; };
+		264C225B28F155C100AF665F /* LogPipeline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogPipeline.swift; sourceTree = "<group>"; };
+		264C225C28F155C100AF665F /* LogLevel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogLevel.swift; sourceTree = "<group>"; };
+		264C225D28F155C100AF665F /* LogEntry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogEntry.swift; sourceTree = "<group>"; };
+		264C225F28F155C100AF665F /* String+fileNameFromPath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+fileNameFromPath.swift"; sourceTree = "<group>"; };
+		264C226328F155C100AF665F /* ConsoleLogWriter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsoleLogWriter.swift; sourceTree = "<group>"; };
+		264C226428F155C100AF665F /* FileLogWriter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileLogWriter.swift; sourceTree = "<group>"; };
+		264C226528F155C100AF665F /* LogWriter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogWriter.swift; sourceTree = "<group>"; };
+		264C228228F1589900AF665F /* DevelopLogFormatterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DevelopLogFormatterTests.swift; sourceTree = "<group>"; };
+		264C228328F1589900AF665F /* SimpleLogFormatterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleLogFormatterTests.swift; sourceTree = "<group>"; };
+		264C228528F1589900AF665F /* LogPipelineProcessEntryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogPipelineProcessEntryTests.swift; sourceTree = "<group>"; };
+		264C228A28F1589900AF665F /* DevelopmentLogFilterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DevelopmentLogFilterTests.swift; sourceTree = "<group>"; };
+		264C228B28F1589900AF665F /* ReleaseLogFilterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReleaseLogFilterTests.swift; sourceTree = "<group>"; };
+		264C228D28F1589900AF665F /* LoggerConcurrencyTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoggerConcurrencyTests.swift; sourceTree = "<group>"; };
+		264C228E28F1589900AF665F /* LoggerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoggerTests.swift; sourceTree = "<group>"; };
+		264C228F28F1589900AF665F /* LoggerCreateEntryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoggerCreateEntryTests.swift; sourceTree = "<group>"; };
+		264C229028F1589900AF665F /* LogLevelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogLevelTests.swift; sourceTree = "<group>"; };
+		264C229228F1589900AF665F /* Mocks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mocks.swift; sourceTree = "<group>"; };
+		264C229428F1589900AF665F /* FileLogWriterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileLogWriterTests.swift; sourceTree = "<group>"; };
+		264C22A228F159A200AF665F /* ExampleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleViewModel.swift; sourceTree = "<group>"; };
+		268330C528F1DBF4005C56F5 /* FileLogWriterError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileLogWriterError.swift; sourceTree = "<group>"; };
+		268330CA28F2B210005C56F5 /* FileLogFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileLogFormatter.swift; sourceTree = "<group>"; };
+		26FCE6CF27D1F9C600C229DA /* INLoggerExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = INLoggerExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		26FCE6D227D1F9C600C229DA /* INLoggerExampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = INLoggerExampleApp.swift; sourceTree = "<group>"; };
+		26FCE6D627D1F9C700C229DA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		26FCE6D927D1F9C700C229DA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		26FCE6E727D1FAD600C229DA /* INLogger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = INLogger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		26FCE6E927D1FAD600C229DA /* INLogger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = INLogger.h; sourceTree = "<group>"; };
+		26FCE6F027D1FAD700C229DA /* INLoggerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = INLoggerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		26FCE70B27D2137300C229DA /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		26FCE79B27D276BF00C229DA /* ExampleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleView.swift; sourceTree = "<group>"; };
+		2707CDC074ACA2A429686739 /* Pods-INLoggerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-INLoggerTests.debug.xcconfig"; path = "Target Support Files/Pods-INLoggerTests/Pods-INLoggerTests.debug.xcconfig"; sourceTree = "<group>"; };
+		67BF383CCDD0E96374B9F2A1 /* Pods-INLoggerExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-INLoggerExample.debug.xcconfig"; path = "Target Support Files/Pods-INLoggerExample/Pods-INLoggerExample.debug.xcconfig"; sourceTree = "<group>"; };
+		81449F7F71630EA9DE31C59A /* Pods_INLogger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_INLogger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		982FA608E68A4D9B2F4EE242 /* Pods-INLoggerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-INLoggerTests.release.xcconfig"; path = "Target Support Files/Pods-INLoggerTests/Pods-INLoggerTests.release.xcconfig"; sourceTree = "<group>"; };
+		D2E8259FAF6787CBFA87BD66 /* Pods-INLogger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-INLogger.release.xcconfig"; path = "Target Support Files/Pods-INLogger/Pods-INLogger.release.xcconfig"; sourceTree = "<group>"; };
+		D8B4F37595AC576D2D0591E2 /* Pods-INLoggerExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-INLoggerExample.release.xcconfig"; path = "Target Support Files/Pods-INLoggerExample/Pods-INLoggerExample.release.xcconfig"; sourceTree = "<group>"; };
+		FB55D7ABEC1132CCF782889E /* Pods_INLoggerExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_INLoggerExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FCC8E65647721DFC4E9B27B3 /* Pods_INLoggerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_INLoggerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		26FCE6CC27D1F9C600C229DA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26FCE6FC27D1FAD700C229DA /* INLogger.framework in Frameworks */,
+				264C22A928F1937B00AF665F /* INCommons in Frameworks */,
+				9A886A5C404411A5FADCA8C6 /* Pods_INLoggerExample.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		26FCE6E427D1FAD600C229DA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				264C224128F099A100AF665F /* INCommons in Frameworks */,
+				41980954330F1CBB38EA8773 /* Pods_INLogger.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		26FCE6ED27D1FAD700C229DA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26FCE6F127D1FAD700C229DA /* INLogger.framework in Frameworks */,
+				264C22A728F1937200AF665F /* INCommons in Frameworks */,
+				CDEF9325D4D2F1862F39EE62 /* Pods_INLoggerTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		264C224328F1547400AF665F /* Logger */ = {
+			isa = PBXGroup;
+			children = (
+				264C225E28F155C100AF665F /* Helper */,
+				264C225228F155C100AF665F /* LogEntryCreator */,
+				264C225A28F155C100AF665F /* LogEssentials */,
+				264C225628F155C100AF665F /* LogFilter */,
+				264C224C28F155C100AF665F /* LogFormatter */,
+				264C224828F155C100AF665F /* LogTag */,
+				264C226228F155C100AF665F /* LogWriter */,
+				264C224428F1548700AF665F /* Logger.swift */,
+			);
+			path = Logger;
+			sourceTree = "<group>";
+		};
+		264C224828F155C100AF665F /* LogTag */ = {
+			isa = PBXGroup;
+			children = (
+				264C224B28F155C100AF665F /* LogTag.swift */,
+				264C224A28F155C100AF665F /* LogTagState.swift */,
+			);
+			path = LogTag;
+			sourceTree = "<group>";
+		};
+		264C224C28F155C100AF665F /* LogFormatter */ = {
+			isa = PBXGroup;
+			children = (
+				264C224F28F155C100AF665F /* DevelopLogFormatter.swift */,
+				268330CA28F2B210005C56F5 /* FileLogFormatter.swift */,
+				264C224E28F155C100AF665F /* LogFormatter.swift */,
+				264C225028F155C100AF665F /* SimpleLogFormatter.swift */,
+			);
+			path = LogFormatter;
+			sourceTree = "<group>";
+		};
+		264C225228F155C100AF665F /* LogEntryCreator */ = {
+			isa = PBXGroup;
+			children = (
+				264C225328F155C100AF665F /* LogEntryCreator.swift */,
+				264C225528F155C100AF665F /* SimpleLogEntryCreator.swift */,
+			);
+			path = LogEntryCreator;
+			sourceTree = "<group>";
+		};
+		264C225628F155C100AF665F /* LogFilter */ = {
+			isa = PBXGroup;
+			children = (
+				264C225728F155C100AF665F /* DevelopmentLogFilter.swift */,
+				264C225828F155C100AF665F /* LogFilter.swift */,
+				264C225928F155C100AF665F /* ReleaseLogFilter.swift */,
+			);
+			path = LogFilter;
+			sourceTree = "<group>";
+		};
+		264C225A28F155C100AF665F /* LogEssentials */ = {
+			isa = PBXGroup;
+			children = (
+				264C225D28F155C100AF665F /* LogEntry.swift */,
+				264C225C28F155C100AF665F /* LogLevel.swift */,
+				264C225B28F155C100AF665F /* LogPipeline.swift */,
+				260A462C29031FD7004D10F8 /* LoggerPipeline.swift */,
+			);
+			path = LogEssentials;
+			sourceTree = "<group>";
+		};
+		264C225E28F155C100AF665F /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				264C225F28F155C100AF665F /* String+fileNameFromPath.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		264C226228F155C100AF665F /* LogWriter */ = {
+			isa = PBXGroup;
+			children = (
+				264C226328F155C100AF665F /* ConsoleLogWriter.swift */,
+				264C226428F155C100AF665F /* FileLogWriter.swift */,
+				268330C528F1DBF4005C56F5 /* FileLogWriterError.swift */,
+				264C226528F155C100AF665F /* LogWriter.swift */,
+			);
+			path = LogWriter;
+			sourceTree = "<group>";
+		};
+		264C228028F1589900AF665F /* LogFormatter */ = {
+			isa = PBXGroup;
+			children = (
+				264C228228F1589900AF665F /* DevelopLogFormatterTests.swift */,
+				264C228328F1589900AF665F /* SimpleLogFormatterTests.swift */,
+			);
+			path = LogFormatter;
+			sourceTree = "<group>";
+		};
+		264C228428F1589900AF665F /* LogPipeline */ = {
+			isa = PBXGroup;
+			children = (
+				264C228528F1589900AF665F /* LogPipelineProcessEntryTests.swift */,
+			);
+			path = LogPipeline;
+			sourceTree = "<group>";
+		};
+		264C228928F1589900AF665F /* LogFilter */ = {
+			isa = PBXGroup;
+			children = (
+				264C228A28F1589900AF665F /* DevelopmentLogFilterTests.swift */,
+				264C228B28F1589900AF665F /* ReleaseLogFilterTests.swift */,
+			);
+			path = LogFilter;
+			sourceTree = "<group>";
+		};
+		264C228C28F1589900AF665F /* Logger */ = {
+			isa = PBXGroup;
+			children = (
+				264C228D28F1589900AF665F /* LoggerConcurrencyTests.swift */,
+				264C228E28F1589900AF665F /* LoggerTests.swift */,
+				264C228F28F1589900AF665F /* LoggerCreateEntryTests.swift */,
+				264C229028F1589900AF665F /* LogLevelTests.swift */,
+			);
+			path = Logger;
+			sourceTree = "<group>";
+		};
+		264C229128F1589900AF665F /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				264C229228F1589900AF665F /* Mocks.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		264C229328F1589900AF665F /* FileLogWriter */ = {
+			isa = PBXGroup;
+			children = (
+				264C229428F1589900AF665F /* FileLogWriterTests.swift */,
+			);
+			path = FileLogWriter;
+			sourceTree = "<group>";
+		};
+		26FCE6C627D1F9C600C229DA = {
+			isa = PBXGroup;
+			children = (
+				26FCE70B27D2137300C229DA /* README.md */,
+				26FCE6E027D1FA1D00C229DA /* Sources */,
+				26FCE6E127D1FA1D00C229DA /* Tests */,
+				26FCE6D027D1F9C600C229DA /* Products */,
+				A1A334526A815466A067FA00 /* Pods */,
+				2959848DA52289D979AB1FD6 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		26FCE6D027D1F9C600C229DA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				26FCE6CF27D1F9C600C229DA /* INLoggerExample.app */,
+				26FCE6E727D1FAD600C229DA /* INLogger.framework */,
+				26FCE6F027D1FAD700C229DA /* INLoggerTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		26FCE6D127D1F9C600C229DA /* INLoggerExample */ = {
+			isa = PBXGroup;
+			children = (
+				26FCE79B27D276BF00C229DA /* ExampleView.swift */,
+				264C22A228F159A200AF665F /* ExampleViewModel.swift */,
+				264C225128F155C100AF665F /* LoggerSetup.swift */,
+				264C224928F155C100AF665F /* LogTag+Tags.swift */,
+				26FCE6D227D1F9C600C229DA /* INLoggerExampleApp.swift */,
+				26FCE6D627D1F9C700C229DA /* Assets.xcassets */,
+				26FCE6D827D1F9C700C229DA /* Preview Content */,
+			);
+			path = INLoggerExample;
+			sourceTree = "<group>";
+		};
+		26FCE6D827D1F9C700C229DA /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				26FCE6D927D1F9C700C229DA /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		26FCE6E027D1FA1D00C229DA /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				26FCE6E827D1FAD600C229DA /* INLogger */,
+				26FCE6D127D1F9C600C229DA /* INLoggerExample */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		26FCE6E127D1FA1D00C229DA /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				26FCE6F627D1FAD700C229DA /* INLoggerTests */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		26FCE6E827D1FAD600C229DA /* INLogger */ = {
+			isa = PBXGroup;
+			children = (
+				264C224328F1547400AF665F /* Logger */,
+				26FCE6E927D1FAD600C229DA /* INLogger.h */,
+			);
+			path = INLogger;
+			sourceTree = "<group>";
+		};
+		26FCE6F627D1FAD700C229DA /* INLoggerTests */ = {
+			isa = PBXGroup;
+			children = (
+				264C229328F1589900AF665F /* FileLogWriter */,
+				264C228928F1589900AF665F /* LogFilter */,
+				264C228028F1589900AF665F /* LogFormatter */,
+				264C228C28F1589900AF665F /* Logger */,
+				264C228428F1589900AF665F /* LogPipeline */,
+				264C229128F1589900AF665F /* Mocks */,
+			);
+			path = INLoggerTests;
+			sourceTree = "<group>";
+		};
+		2959848DA52289D979AB1FD6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				81449F7F71630EA9DE31C59A /* Pods_INLogger.framework */,
+				FB55D7ABEC1132CCF782889E /* Pods_INLoggerExample.framework */,
+				FCC8E65647721DFC4E9B27B3 /* Pods_INLoggerTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A1A334526A815466A067FA00 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1D3CF85261265366D7A83882 /* Pods-INLogger.debug.xcconfig */,
+				D2E8259FAF6787CBFA87BD66 /* Pods-INLogger.release.xcconfig */,
+				67BF383CCDD0E96374B9F2A1 /* Pods-INLoggerExample.debug.xcconfig */,
+				D8B4F37595AC576D2D0591E2 /* Pods-INLoggerExample.release.xcconfig */,
+				2707CDC074ACA2A429686739 /* Pods-INLoggerTests.debug.xcconfig */,
+				982FA608E68A4D9B2F4EE242 /* Pods-INLoggerTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		26FCE6E227D1FAD600C229DA /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26FCE6F927D1FAD700C229DA /* INLogger.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		26FCE6CE27D1F9C600C229DA /* INLoggerExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 26FCE6DD27D1F9C700C229DA /* Build configuration list for PBXNativeTarget "INLoggerExample" */;
+			buildPhases = (
+				37BF3F21F4322B6E0EEEC86F /* [CP] Check Pods Manifest.lock */,
+				26FCE6CB27D1F9C600C229DA /* Sources */,
+				26FCE6CC27D1F9C600C229DA /* Frameworks */,
+				26FCE6CD27D1F9C600C229DA /* Resources */,
+				26FCE70127D1FAD700C229DA /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				26FCE6FB27D1FAD700C229DA /* PBXTargetDependency */,
+			);
+			name = INLoggerExample;
+			packageProductDependencies = (
+				264C22A828F1937B00AF665F /* INCommons */,
+			);
+			productName = INLoggerExample;
+			productReference = 26FCE6CF27D1F9C600C229DA /* INLoggerExample.app */;
+			productType = "com.apple.product-type.application";
+		};
+		26FCE6E627D1FAD600C229DA /* INLogger */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 26FCE6FE27D1FAD700C229DA /* Build configuration list for PBXNativeTarget "INLogger" */;
+			buildPhases = (
+				9D0DC6C45750C6510E64A69D /* [CP] Check Pods Manifest.lock */,
+				26FCE70C27D214E900C229DA /* Install GitHooks */,
+				26FCE70D27D2152400C229DA /* SwiftLint */,
+				26FCE6E227D1FAD600C229DA /* Headers */,
+				26FCE6E327D1FAD600C229DA /* Sources */,
+				26FCE6E427D1FAD600C229DA /* Frameworks */,
+				26FCE6E527D1FAD600C229DA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = INLogger;
+			packageProductDependencies = (
+				264C224028F099A100AF665F /* INCommons */,
+			);
+			productName = INLogger;
+			productReference = 26FCE6E727D1FAD600C229DA /* INLogger.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		26FCE6EF27D1FAD700C229DA /* INLoggerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 26FCE70227D1FAD700C229DA /* Build configuration list for PBXNativeTarget "INLoggerTests" */;
+			buildPhases = (
+				CE52072C5BFE7B2418126834 /* [CP] Check Pods Manifest.lock */,
+				26FCE6EC27D1FAD700C229DA /* Sources */,
+				26FCE6ED27D1FAD700C229DA /* Frameworks */,
+				26FCE6EE27D1FAD700C229DA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				26FCE6F327D1FAD700C229DA /* PBXTargetDependency */,
+				26FCE6F527D1FAD700C229DA /* PBXTargetDependency */,
+			);
+			name = INLoggerTests;
+			packageProductDependencies = (
+				264C22A628F1937200AF665F /* INCommons */,
+			);
+			productName = INLoggerTests;
+			productReference = 26FCE6F027D1FAD700C229DA /* INLoggerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		26FCE6C727D1F9C600C229DA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1320;
+				LastUpgradeCheck = 1400;
+				TargetAttributes = {
+					26FCE6CE27D1F9C600C229DA = {
+						CreatedOnToolsVersion = 13.2.1;
+					};
+					26FCE6E627D1FAD600C229DA = {
+						CreatedOnToolsVersion = 13.2.1;
+						LastSwiftMigration = 1400;
+					};
+					26FCE6EF27D1FAD700C229DA = {
+						CreatedOnToolsVersion = 13.2.1;
+						LastSwiftMigration = 1330;
+					};
+					26FCE71027D215C800C229DA = {
+						CreatedOnToolsVersion = 13.2.1;
+					};
+				};
+			};
+			buildConfigurationList = 26FCE6CA27D1F9C600C229DA /* Build configuration list for PBXProject "INLogger" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 26FCE6C627D1F9C600C229DA;
+			packageReferences = (
+				264C223F28F099A100AF665F /* XCRemoteSwiftPackageReference "INCommons" */,
+			);
+			productRefGroup = 26FCE6D027D1F9C600C229DA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				26FCE6CE27D1F9C600C229DA /* INLoggerExample */,
+				26FCE6E627D1FAD600C229DA /* INLogger */,
+				26FCE6EF27D1FAD700C229DA /* INLoggerTests */,
+				26FCE71027D215C800C229DA /* SwiftFormat */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		26FCE6CD27D1F9C600C229DA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26FCE6DA27D1F9C700C229DA /* Preview Assets.xcassets in Resources */,
+				26FCE6D727D1F9C700C229DA /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		26FCE6E527D1FAD600C229DA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		26FCE6EE27D1FAD700C229DA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		26FCE70C27D214E900C229DA /* Install GitHooks */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Install GitHooks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Scripts/copyGitHooks.sh\n";
+		};
+		26FCE70D27D2152400C229DA /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+		};
+		26FCE71427D215DD00C229DA /* Extract Swift Version Number */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Extract Swift Version Number";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = ". Scripts/extractSwiftVersion.sh\n";
+		};
+		26FCE71527D215F400C229DA /* SwiftFormat */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftFormat;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = ". config.sh\n\"Pods/SwiftFormat/CommandLineTool/swiftformat\" ${SWIFT_FORMAT_CODE_PATHS[*]} --exclude ${SWIFT_FORMAT_EXCLUDE_PATHS}\n";
+		};
+		37BF3F21F4322B6E0EEEC86F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-INLoggerExample-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9D0DC6C45750C6510E64A69D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-INLogger-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CE52072C5BFE7B2418126834 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-INLoggerTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		26FCE6CB27D1F9C600C229DA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26FCE7A327D276BF00C229DA /* ExampleView.swift in Sources */,
+				264C22A528F17A6D00AF665F /* LogTag+Tags.swift in Sources */,
+				264C22A328F159A200AF665F /* ExampleViewModel.swift in Sources */,
+				264C22A428F15AAF00AF665F /* LoggerSetup.swift in Sources */,
+				26FCE6D327D1F9C600C229DA /* INLoggerExampleApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		26FCE6E327D1FAD600C229DA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				264C226A28F155C100AF665F /* LogTag.swift in Sources */,
+				264C226D28F155C100AF665F /* DevelopLogFormatter.swift in Sources */,
+				264C227E28F155C100AF665F /* LogWriter.swift in Sources */,
+				264C227028F155C100AF665F /* LogEntryCreator.swift in Sources */,
+				264C227C28F155C100AF665F /* ConsoleLogWriter.swift in Sources */,
+				264C227828F155C100AF665F /* LogEntry.swift in Sources */,
+				260A462D29031FD7004D10F8 /* LoggerPipeline.swift in Sources */,
+				264C227928F155C100AF665F /* String+fileNameFromPath.swift in Sources */,
+				264C224528F1548700AF665F /* Logger.swift in Sources */,
+				264C227228F155C100AF665F /* SimpleLogEntryCreator.swift in Sources */,
+				264C227528F155C100AF665F /* ReleaseLogFilter.swift in Sources */,
+				268330C628F1DBF4005C56F5 /* FileLogWriterError.swift in Sources */,
+				264C227428F155C100AF665F /* LogFilter.swift in Sources */,
+				268330CB28F2B210005C56F5 /* FileLogFormatter.swift in Sources */,
+				264C227728F155C100AF665F /* LogLevel.swift in Sources */,
+				264C227D28F155C100AF665F /* FileLogWriter.swift in Sources */,
+				264C226C28F155C100AF665F /* LogFormatter.swift in Sources */,
+				264C227628F155C100AF665F /* LogPipeline.swift in Sources */,
+				264C227328F155C100AF665F /* DevelopmentLogFilter.swift in Sources */,
+				264C226E28F155C100AF665F /* SimpleLogFormatter.swift in Sources */,
+				264C226928F155C100AF665F /* LogTagState.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		26FCE6EC27D1FAD700C229DA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				264C22B128F1969200AF665F /* ReleaseLogFilterTests.swift in Sources */,
+				264C22AE28F1969200AF665F /* LogLevelTests.swift in Sources */,
+				264C22B428F1969200AF665F /* LoggerTests.swift in Sources */,
+				264C22AB28F1969200AF665F /* LoggerCreateEntryTests.swift in Sources */,
+				264C22B628F196AC00AF665F /* LogTag+Tags.swift in Sources */,
+				264C22AD28F1969200AF665F /* FileLogWriterTests.swift in Sources */,
+				264C22B328F1969200AF665F /* SimpleLogFormatterTests.swift in Sources */,
+				264C22AF28F1969200AF665F /* LogPipelineProcessEntryTests.swift in Sources */,
+				264C22B228F1969200AF665F /* DevelopLogFormatterTests.swift in Sources */,
+				264C22B528F1969200AF665F /* DevelopmentLogFilterTests.swift in Sources */,
+				264C22B728F196B100AF665F /* LoggerSetup.swift in Sources */,
+				264C22AA28F1969200AF665F /* LoggerConcurrencyTests.swift in Sources */,
+				264C22AC28F1969200AF665F /* Mocks.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		26FCE6F327D1FAD700C229DA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 26FCE6E627D1FAD600C229DA /* INLogger */;
+			targetProxy = 26FCE6F227D1FAD700C229DA /* PBXContainerItemProxy */;
+		};
+		26FCE6F527D1FAD700C229DA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 26FCE6CE27D1F9C600C229DA /* INLoggerExample */;
+			targetProxy = 26FCE6F427D1FAD700C229DA /* PBXContainerItemProxy */;
+		};
+		26FCE6FB27D1FAD700C229DA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 26FCE6E627D1FAD600C229DA /* INLogger */;
+			targetProxy = 26FCE6FA27D1FAD700C229DA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		26FCE6DB27D1F9C700C229DA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		26FCE6DC27D1F9C700C229DA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		26FCE6DE27D1F9C700C229DA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 67BF383CCDD0E96374B9F2A1 /* Pods-INLoggerExample.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Sources/INLoggerExample/Preview Content\"";
+				DEVELOPMENT_TEAM = H6T8HJZGHY;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.indie-software.INLoggerExample";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		26FCE6DF27D1F9C700C229DA /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D8B4F37595AC576D2D0591E2 /* Pods-INLoggerExample.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Sources/INLoggerExample/Preview Content\"";
+				DEVELOPMENT_TEAM = H6T8HJZGHY;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.indie-software.INLoggerExample";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		26FCE6FF27D1FAD700C229DA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1D3CF85261265366D7A83882 /* Pods-INLogger.debug.xcconfig */;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = H6T8HJZGHY;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.indie-software.INLogger";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		26FCE70027D1FAD700C229DA /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D2E8259FAF6787CBFA87BD66 /* Pods-INLogger.release.xcconfig */;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = H6T8HJZGHY;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.indie-software.INLogger";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		26FCE70327D1FAD700C229DA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2707CDC074ACA2A429686739 /* Pods-INLoggerTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 5;
+				DEVELOPMENT_TEAM = H6T8HJZGHY;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.indie-software.INLoggerTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		26FCE70427D1FAD700C229DA /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 982FA608E68A4D9B2F4EE242 /* Pods-INLoggerTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 5;
+				DEVELOPMENT_TEAM = H6T8HJZGHY;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.indie-software.INLoggerTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		26FCE71227D215C800C229DA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_TEAM = H6T8HJZGHY;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		26FCE71327D215C800C229DA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_TEAM = H6T8HJZGHY;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		26FCE6CA27D1F9C600C229DA /* Build configuration list for PBXProject "INLogger" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				26FCE6DB27D1F9C700C229DA /* Debug */,
+				26FCE6DC27D1F9C700C229DA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		26FCE6DD27D1F9C700C229DA /* Build configuration list for PBXNativeTarget "INLoggerExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				26FCE6DE27D1F9C700C229DA /* Debug */,
+				26FCE6DF27D1F9C700C229DA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		26FCE6FE27D1FAD700C229DA /* Build configuration list for PBXNativeTarget "INLogger" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				26FCE6FF27D1FAD700C229DA /* Debug */,
+				26FCE70027D1FAD700C229DA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		26FCE70227D1FAD700C229DA /* Build configuration list for PBXNativeTarget "INLoggerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				26FCE70327D1FAD700C229DA /* Debug */,
+				26FCE70427D1FAD700C229DA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		26FCE71127D215C800C229DA /* Build configuration list for PBXAggregateTarget "SwiftFormat" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				26FCE71227D215C800C229DA /* Debug */,
+				26FCE71327D215C800C229DA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		264C223F28F099A100AF665F /* XCRemoteSwiftPackageReference "INCommons" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/indieSoftware/INCommons";
+			requirement = {
+				branch = develop;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		264C224028F099A100AF665F /* INCommons */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 264C223F28F099A100AF665F /* XCRemoteSwiftPackageReference "INCommons" */;
+			productName = INCommons;
+		};
+		264C22A628F1937200AF665F /* INCommons */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 264C223F28F099A100AF665F /* XCRemoteSwiftPackageReference "INCommons" */;
+			productName = INCommons;
+		};
+		264C22A828F1937B00AF665F /* INCommons */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 264C223F28F099A100AF665F /* XCRemoteSwiftPackageReference "INCommons" */;
+			productName = INCommons;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 26FCE6C727D1F9C600C229DA /* Project object */;
+}
