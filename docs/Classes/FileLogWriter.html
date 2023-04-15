@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>FileLogWriter Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset="utf-8">
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+    <script src="../js/lunr.min.js" defer></script>
+    <script src="../js/typeahead.jquery.js" defer></script>
+    <script src="../js/jazzy.search.js" defer></script>
+  </head>
+  <body>
+
+    <a name="//apple_ref/swift/Class/FileLogWriter" class="dashAnchor"></a>
+
+    <a title="FileLogWriter Class Reference"></a>
+
+    <header class="header">
+      <p class="header-col header-col--primary">
+        <a class="header-link" href="../index.html">
+          INLogger
+        </a>
+         (68% documented)
+      </p>
+    
+      <div class="header-col--secondary">
+        <form role="search" action="../search.json">
+          <input type="text" placeholder="Search documentation" data-typeahead>
+        </form>
+      </div>
+    
+        <p class="header-col header-col--secondary">
+          <a class="header-link" href="https://github.com/indieSoftware/INLogger">
+            <img class="header-icon" src="../img/gh.png" alt="GitHub"/>
+            View on GitHub
+          </a>
+        </p>
+    
+    </header>
+
+    <p class="breadcrumbs">
+      <a class="breadcrumb" href="../index.html">INLogger Reference</a>
+      <img class="carat" src="../img/carat.png" alt=""/>
+      FileLogWriter Class Reference
+    </p>
+
+    <div class="content-wrapper">
+      <nav class="navigation">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/ConsoleLogWriter.html">ConsoleLogWriter</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/DevelopLogFormatter.html">DevelopLogFormatter</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/DevelopmentLogFilter.html">DevelopmentLogFilter</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/FileLogFormatter.html">FileLogFormatter</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/FileLogWriter.html">FileLogWriter</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/FileLogWriter/LogFileType.html">– LogFileType</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/Logger.html">Logger</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/ReleaseLogFilter.html">ReleaseLogFilter</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/SimpleLogEntryCreator.html">SimpleLogEntryCreator</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/SimpleLogFormatter.html">SimpleLogFormatter</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/FileLogWriterError.html">FileLogWriterError</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/LogLevel.html">LogLevel</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/LogTagState.html">LogTagState</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/String.html">String</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Extensions/%5BLogTag%5D.html">[LogTag]</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/LogEntryCreator.html">LogEntryCreator</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/LogFilter.html">LogFilter</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/LogFormatter.html">LogFormatter</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/LogWriter.html">LogWriter</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Protocols/LoggerPipeline.html">LoggerPipeline</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a class="nav-group-name-link" href="../Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/LogEntry.html">LogEntry</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/LogPipeline.html">LogPipeline</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/LogTag.html">LogTag</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+
+        <section class="section">
+          <div class="section-content top-matter">
+            <h1>FileLogWriter</h1>
+              <div class="declaration">
+                <div class="language">
+                  
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="kt">FileLogWriter</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/LogWriter.html">LogWriter</a></span><span class="p">,</span> <span class="kd">@unchecked</span> <span class="kt">Sendable</span></code></pre>
+
+                </div>
+              </div>
+            <p>A log writer specific for log files used by the <code><a href="../Classes/Logger.html">Logger</a></code>&lsquo;s pipeline.</p>
+
+<p>A queue ensures the ACID principles for logs written to files by this writer instance.
+However, be aware that when creating two different instances of a FileLogWriter both
+have different queues and thus might still mess up when writing to the same file,
+therefore, each writer should be responsible only for their own files and not share
+the same file with other writer.</p>
+
+<p>Any logs get written to the log file, but when a new log file is about to create then
+the old log file gets backed up.
+This makes the log file to rotate where we have a current log file and an old log file
+with a total of up to two log files for rotation.</p>
+
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="section-content">
+            <div class="task-group">
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8INLogger13FileLogWriterC07defaultC6Folder10Foundation3URLVvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/defaultLogFolder" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8INLogger13FileLogWriterC07defaultC6Folder10Foundation3URLVvpZ">defaultLogFolder</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The default folder for log files.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">defaultLogFolder</span><span class="p">:</span> <span class="kt">URL</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8INLogger13FileLogWriterC07defaultcB4NameSSvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/defaultLogFileName" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8INLogger13FileLogWriterC07defaultcB4NameSSvpZ">defaultLogFileName</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The default file name for the log file.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">defaultLogFileName</span><span class="p">:</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8INLogger13FileLogWriterC17defaultBackupNameSSvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/defaultBackupName" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8INLogger13FileLogWriterC17defaultBackupNameSSvpZ">defaultBackupName</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The default file name for the rotating backup file.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">defaultBackupName</span><span class="p">:</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8INLogger13FileLogWriterC10fileFolder10Foundation3URLVvp"></a>
+                    <a name="//apple_ref/swift/Property/fileFolder" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8INLogger13FileLogWriterC10fileFolder10Foundation3URLVvp">fileFolder</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The folder where to save the log and backup file.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">fileFolder</span><span class="p">:</span> <span class="kt">URL</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8INLogger13FileLogWriterC03logB4Path10Foundation3URLVvp"></a>
+                    <a name="//apple_ref/swift/Property/logFilePath" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8INLogger13FileLogWriterC03logB4Path10Foundation3URLVvp">logFilePath</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The URL to the log file.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">logFilePath</span><span class="p">:</span> <span class="kt">URL</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8INLogger13FileLogWriterC06backupB4Path10Foundation3URLVvp"></a>
+                    <a name="//apple_ref/swift/Property/backupFilePath" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8INLogger13FileLogWriterC06backupB4Path10Foundation3URLVvp">backupFilePath</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The URL to the rotating backup log file.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">backupFilePath</span><span class="p">:</span> <span class="kt">URL</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8INLogger13FileLogWriterC8fileName06backupF06folder23redirectStderrToLogfile21internalErrorReporterACSS_SS10Foundation3URLVSbyAA0bcdN0OYbctcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(fileName:backupName:folder:redirectStderrToLogfile:internalErrorReporter:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8INLogger13FileLogWriterC8fileName06backupF06folder23redirectStderrToLogfile21internalErrorReporterACSS_SS10Foundation3URLVSbyAA0bcdN0OYbctcfc">init(fileName:<wbr>backupName:<wbr>folder:<wbr>redirectStderrToLogfile:<wbr>internalErrorReporter:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Instantiates a new log file writer.</p>
+
+<p>As part of the initialization a new log file will be created which might lead
+to a backup of the old one.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span>
+	<span class="nv">fileName</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="n"><a href="../Classes/FileLogWriter.html#/s:8INLogger13FileLogWriterC07defaultcB4NameSSvpZ">defaultLogFileName</a></span><span class="p">,</span>
+	<span class="nv">backupName</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="n"><a href="../Classes/FileLogWriter.html#/s:8INLogger13FileLogWriterC17defaultBackupNameSSvpZ">defaultBackupName</a></span><span class="p">,</span>
+	<span class="nv">folder</span><span class="p">:</span> <span class="kt">URL</span> <span class="o">=</span> <span class="n"><a href="../Classes/FileLogWriter.html#/s:8INLogger13FileLogWriterC07defaultC6Folder10Foundation3URLVvpZ">defaultLogFolder</a></span><span class="p">,</span>
+	<span class="nv">redirectStderrToLogfile</span><span class="p">:</span> <span class="kt">Bool</span> <span class="o">=</span> <span class="kc">false</span><span class="p">,</span>
+	<span class="nv">internalErrorReporter</span><span class="p">:</span> <span class="kd">@Sendable</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt"><a href="../Enums/FileLogWriterError.html">FileLogWriterError</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span> <span class="o">=</span> <span class="p">{</span> <span class="n">error</span> <span class="k">in</span>
+		<span class="kt">NSLog</span><span class="p">(</span><span class="s">"ERROR - Logger.FileLogWriter: </span><span class="se">\(</span><span class="n">error</span><span class="o">.</span><span class="n">description</span><span class="se">)</span><span class="s">"</span><span class="p">)</span>
+	<span class="p">}</span>
+<span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>fileName</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The name of the file where to write any log statements to.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>backupName</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The name of the backup file where to save the log file
+when a new gets created.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>folder</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>An URL to the folder where to save the log and backup files.
+Defaults to the documents directory.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>redirectStderrToLogfile</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Set to <code>true</code> to redirect the
+standard error stream to the log file to make sure also any <code>print</code> and
+<code>NSLog</code> statements are logged from 3rd party libs.
+Be aware that this can muddle the log file because it can happen that the
+log writer is trying to write something to the file in the same time as the
+stderr stream is sending to the file.
+Therefore, that can cause log statements in the file being interrupted by other statement
+intersecting them.
+Also it&rsquo;s only possible to direct the stderr to one log file, therefore, don&rsquo;t set
+to true for more than one <code>FileLogWriter</code> instance.
+Defaults to <code>false</code>.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>internalErrorReporter</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A closure to which internal errors are reported.
+Defaultly this just prints the error via <code>NSLog.
+Since we are part of the logger itself we can&#39;t use the logger to log an error
+related to the Logger, therefore, we are using this reporter to have
+at least a chance during development to find problems related to the
+</code>FileLogWriter` and we can hook into this for UnitTests to verify any
+error messages.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8INLogger9LogWriterP5writeyySSF"></a>
+                    <a name="//apple_ref/swift/Method/write(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8INLogger9LogWriterP5writeyySSF">write(_:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">write</span><span class="p">(</span><span class="n">_</span> <span class="nv">message</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8INLogger13FileLogWriterC0cB4TypeO"></a>
+                    <a name="//apple_ref/swift/Enum/LogFileType" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8INLogger13FileLogWriterC0cB4TypeO">LogFileType</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Points to a specific log file type and defines what to return
+when requesting for the log file&rsquo;s content.</p>
+
+                        <a href="../Classes/FileLogWriter/LogFileType.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">LogFileType</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8INLogger13FileLogWriterC09contentOfC08fileTypeSSSgAC0cbH0O_tF"></a>
+                    <a name="//apple_ref/swift/Method/contentOfLog(fileType:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8INLogger13FileLogWriterC09contentOfC08fileTypeSSSgAC0cbH0O_tF">contentOfLog(fileType:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns the content of the log file.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">contentOfLog</span><span class="p">(</span><span class="nv">fileType</span><span class="p">:</span> <span class="kt"><a href="../Classes/FileLogWriter/LogFileType.html">LogFileType</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">String</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>fileType</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Define which file&rsquo;s content should be returned.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The content of the specified log file or nil if none could be read.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+      </article>
+    </div>
+    <section class="footer">
+      <p>&copy; 2023 <a class="link" href="https://github.com/indieSoftware/INLogger" target="_blank" rel="external noopener">indie-Software</a>. All rights reserved. (Last updated: 2023-04-15)</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external noopener">jazzy ♪♫ v0.14.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external noopener">Realm</a> project.</p>
+    </section>
+  </body>
+</html>
