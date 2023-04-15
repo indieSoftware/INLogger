@@ -95,58 +95,80 @@ public final class FileLogWriter: LogWriter, @unchecked Sendable {
 
 	/// Initiates a log file rotation by backing up any current log file and creating a new one.
 	private func createNewLogFile(redirectStderrToLogfile: Bool) {
-		writerQueue.async {
-			let fileManager = FileManager.default
+		writerQueue.async { [weak self] in
+			guard let self else { return }
 
-			// Delete backup file if it exists.
-			if fileManager.fileExists(atPath: self.backupFilePath.path) {
-				do {
-					try fileManager.removeItem(at: self.backupFilePath)
-				} catch {
-					self.internalErrorReporter(.backupLogFileCouldNotBeDeleted(error))
-				}
-			}
+			guard deleteBackupFileIfExists() else { return }
+			guard renameLogFileToBackupFileIfExists() else { return }
+			guard ensureLogFileFolderExists() else { return }
+			guard createEmptyLogFileAndOpenItForWriting() else { return }
 
-			// Rename log file to backup file if one exists.
-			if fileManager.fileExists(atPath: self.logFilePath.path) {
-				do {
-					try fileManager.moveItem(at: self.logFilePath, to: self.backupFilePath)
-				} catch {
-					self.internalErrorReporter(.logFileCouldNotBeBackedUp(error))
-				}
-			}
-
-			// Ensure folder for files exist.
-			var fileFolderIsDirectory: ObjCBool = false
-			if !fileManager.fileExists(atPath: self.fileFolder.path, isDirectory: &fileFolderIsDirectory) {
-				do {
-					try fileManager.createDirectory(at: self.fileFolder, withIntermediateDirectories: true, attributes: nil)
-				} catch {
-					self.internalErrorReporter(.logFolderCouldNotBeCreated(error))
-				}
-			} else {
-				guard fileFolderIsDirectory.boolValue else {
-					self.internalErrorReporter(.logFolderExistsButIsNotAFolder)
-					return
-				}
-			}
-
-			// Create empty log file and open it for writing.
-			guard fileManager.createFile(atPath: self.logFilePath.path, contents: nil, attributes: nil) else {
-				self.internalErrorReporter(.logFileCouldNotBeCreated)
-				return
-			}
-			do {
-				self.logFileHandle = try FileHandle(forWritingTo: self.logFilePath)
-			} catch {
-				self.internalErrorReporter(.logFileCouldNotBeOpenForWriting(error))
-			}
-
-			// Redirect standard error stream to log file.
 			if redirectStderrToLogfile {
-				freopen(self.logFilePath.path.cString(using: String.Encoding.utf8), "a", stderr)
+				freopen(logFilePath.path.cString(using: String.Encoding.utf8), "a", stderr)
 			}
 		}
+	}
+
+	private func deleteBackupFileIfExists() -> Bool {
+		let fileExists = FileManager.default.fileExists(atPath: backupFilePath.path)
+		if fileExists {
+			do {
+				try FileManager.default.removeItem(at: backupFilePath)
+			} catch {
+				internalErrorReporter(.backupLogFileCouldNotBeDeleted(error))
+				return false
+			}
+		}
+		return true
+	}
+
+	private func renameLogFileToBackupFileIfExists() -> Bool {
+		let fileExists = FileManager.default.fileExists(atPath: logFilePath.path)
+		if fileExists {
+			do {
+				try FileManager.default.moveItem(at: logFilePath, to: backupFilePath)
+			} catch {
+				internalErrorReporter(.logFileCouldNotBeBackedUp(error))
+				return false
+			}
+		}
+		return true
+	}
+
+	private func ensureLogFileFolderExists() -> Bool {
+		var fileFolderIsDirectory: ObjCBool = false
+		let fileFolderExists = FileManager.default.fileExists(atPath: fileFolder.path, isDirectory: &fileFolderIsDirectory)
+		if fileFolderExists {
+			if !fileFolderIsDirectory.boolValue {
+				internalErrorReporter(.logFolderExistsButIsNotAFolder)
+				return false
+			}
+			return true
+		}
+
+		do {
+			try FileManager.default.createDirectory(at: fileFolder, withIntermediateDirectories: true, attributes: nil)
+		} catch {
+			internalErrorReporter(.logFolderCouldNotBeCreated(error))
+			return false
+		}
+		return true
+	}
+
+	private func createEmptyLogFileAndOpenItForWriting() -> Bool {
+		let fileCreated = FileManager.default.createFile(atPath: logFilePath.path, contents: nil, attributes: nil)
+		guard fileCreated else {
+			internalErrorReporter(.logFileCouldNotBeCreated)
+			return false
+		}
+
+		do {
+			logFileHandle = try FileHandle(forWritingTo: logFilePath)
+		} catch {
+			internalErrorReporter(.logFileCouldNotBeOpenForWriting(error))
+			return false
+		}
+		return true
 	}
 
 	private var logFileHandle: FileHandle? {

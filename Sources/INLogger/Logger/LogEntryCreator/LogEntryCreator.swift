@@ -31,8 +31,7 @@ public protocol LogEntryCreator {
 	 - parameter line: The line number in the file where the log message has been dispatched.
 	 - returns: A new log entry with all relevant information suitable for the pipeline to process later.
 	 */
-	// swiftlint:disable:next function_parameter_count
-	func createEntry(
+	func createEntry( // swiftlint:disable:this function_parameter_count
 		message: String,
 		level: LogLevel,
 		tags: [LogTag],

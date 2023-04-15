@@ -182,7 +182,7 @@ class FileLogWriterTests: XCTestCase {
 		let errorExpectation = expectation(description: "errorExpectation")
 		let errorReporter: @Sendable (FileLogWriterError) -> Void = { error in
 			guard case FileLogWriterError.logFolderExistsButIsNotAFolder = error else {
-				XCTFail()
+				XCTFail("Wrong error: \(error)")
 				return
 			}
 			errorExpectation.fulfill()
