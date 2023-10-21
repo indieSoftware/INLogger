@@ -38,7 +38,7 @@ public final class FileLogFormatter: LogFormatter {
 		// Keep the user's time zone.
 		formatter.timeZone = .current
 		// The format pattern can be found here: http://www.unicode.org/reports/tr35/tr35-31/tr35-dates.html#Date_Format_Patterns
-		formatter.dateFormat = "yyyy-MM.dd HH:mm:ss Z"
+		formatter.dateFormat = "yyyy-MM-dd HH:mm:ss Z"
 		return formatter
 	}()
 }
