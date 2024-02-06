@@ -14,15 +14,15 @@ public final class FileLogFormatter: LogFormatter {
 	private func stringForLogLevel(_ logLevel: LogLevel) -> String {
 		switch logLevel {
 		case .debug:
-			return "D"
+			"D"
 		case .info:
-			return "I"
+			"I"
 		case .warn:
-			return "W"
+			"W"
 		case .error:
-			return "E"
+			"E"
 		case .fatal:
-			return "F"
+			"F"
 		}
 	}
 

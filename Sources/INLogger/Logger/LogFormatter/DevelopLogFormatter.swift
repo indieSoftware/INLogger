@@ -12,15 +12,15 @@ public final class DevelopLogFormatter: LogFormatter {
 	private func stringForLogLevel(_ logLevel: LogLevel) -> String {
 		switch logLevel {
 		case .debug:
-			return "🔍"
+			"🔍"
 		case .info:
-			return "💬"
+			"💬"
 		case .warn:
-			return "⚠️"
+			"⚠️"
 		case .error:
-			return "💣"
+			"💣"
 		case .fatal:
-			return "💥"
+			"💥"
 		}
 	}
 

@@ -43,9 +43,9 @@ extension LogTagState: Equatable, Comparable {
 		case (.disabled, .disabled),
 		     (.enabled, .enabled),
 		     (.forceDisabled, .forceDisabled):
-			return true
+			true
 		default:
-			return false
+			false
 		}
 	}
 
@@ -56,9 +56,9 @@ extension LogTagState: Equatable, Comparable {
 		case (.disabled, .enabled),
 		     (.disabled, .forceDisabled),
 		     (.enabled, .forceDisabled):
-			return true
+			true
 		default:
-			return false
+			false
 		}
 	}
 }

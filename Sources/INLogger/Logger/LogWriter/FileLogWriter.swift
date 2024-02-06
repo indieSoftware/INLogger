@@ -223,12 +223,11 @@ public final class FileLogWriter: LogWriter, @unchecked Sendable {
 	 - returns: The content of the specified log file or nil if none could be read.
 	 */
 	public func contentOfLog(fileType: LogFileType) -> String? {
-		let fileUrl: URL
-		switch fileType {
+		let fileUrl: URL = switch fileType {
 		case .logFile:
-			fileUrl = logFilePath
+			logFilePath
 		case .backupFile:
-			fileUrl = backupFilePath
+			backupFilePath
 		}
 
 		// Use sync here because we want to return the content immediately

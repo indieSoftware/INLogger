@@ -9,10 +9,10 @@ public final class ReleaseLogFilter: LogFilter {
 		switch entry.level {
 		case .debug:
 			// Never log debug statements.
-			return false
+			false
 		case .info, .warn, .error, .fatal:
 			// Always log non-debug statements and ignore any tag states.
-			return true
+			true
 		}
 	}
 }
