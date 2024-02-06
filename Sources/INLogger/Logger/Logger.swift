@@ -80,12 +80,12 @@ public final class Logger {
 
 		let capturedPipelines = pipelines
 		if processOnThread {
-			capturedPipelines.forEach { pipeline in
+			for pipeline in capturedPipelines {
 				pipeline.processEntry(entry)
 			}
 		} else {
 			processingQueue.async {
-				capturedPipelines.forEach { pipeline in
+				for pipeline in capturedPipelines {
 					pipeline.processEntry(entry)
 				}
 			}

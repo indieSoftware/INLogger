@@ -17,25 +17,25 @@ public enum FileLogWriterError: Error, CustomStringConvertible, Sendable {
 	public var description: String {
 		switch self {
 		case let .backupLogFileCouldNotBeDeleted(error):
-			return "Backup log file couldn't be deleted: \(error.localizedDescription)"
+			"Backup log file couldn't be deleted: \(error.localizedDescription)"
 		case let .logFileCouldNotBeBackedUp(error):
-			return "Log file couldn't be backed up: \(error.localizedDescription)"
+			"Log file couldn't be backed up: \(error.localizedDescription)"
 		case let .logFolderCouldNotBeCreated(error):
-			return "Log's folder couldn't be created: \(error.localizedDescription)"
+			"Log's folder couldn't be created: \(error.localizedDescription)"
 		case .logFolderExistsButIsNotAFolder:
-			return "Log's folder exists, but is not a folder!"
+			"Log's folder exists, but is not a folder!"
 		case .logFileCouldNotBeCreated:
-			return "Log file couldn't be created!"
+			"Log file couldn't be created!"
 		case let .logFileCouldNotBeOpenForWriting(error):
-			return "Log file couldn't be open for writing: \(error.localizedDescription)"
+			"Log file couldn't be open for writing: \(error.localizedDescription)"
 		case let .logFileCouldNotBeClosed(error):
-			return "Log file couldn't be closed: \(error.localizedDescription)"
+			"Log file couldn't be closed: \(error.localizedDescription)"
 		case .noLogFileHandlerAvailable:
-			return "No log file handler available!"
+			"No log file handler available!"
 		case let .messageCouldNotBeEncodedToData(message):
-			return "Message couldn't be encoded to a data object: '\(message)'"
+			"Message couldn't be encoded to a data object: '\(message)'"
 		case let .logFileCouldNotBeWritten(error):
-			return "Log file couldn't be written to: \(error.localizedDescription)"
+			"Log file couldn't be written to: \(error.localizedDescription)"
 		}
 	}
 }

@@ -55,7 +55,7 @@ public struct LogPipeline: LoggerPipeline, Sendable {
 		let formattedString = formatter.formatEntry(entry)
 
 		// Pass the formatted log message to all writers.
-		writer.forEach { writer in
+		for writer in writer {
 			writer.write(formattedString)
 		}
 	}
