@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "INCommons",
+        "repositoryURL": "https://github.com/indieSoftware/INCommons.git",
+        "state": {
+          "branch": null,
+          "revision": "da5089c04e3e946a5b274114b81f31559f017d52",
+          "version": "4.0.0"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
