@@ -2,7 +2,8 @@ import INCommons
 @testable import INLogger
 import XCTest
 
-class FileLogWriterTests: XCTestCase {
+@MainActor
+class FileLogWriterTests: XCTestCase, Sendable {
 	var fileUrl: URL!
 	var backupUrl: URL!
 
@@ -10,7 +11,8 @@ class FileLogWriterTests: XCTestCase {
 		XCTFail("Writer error: \(error)")
 	}
 
-	override func setUp() {
+	override func setUp() async throws {
+		try await super.setUp()
 		// This is the writer's default as provided by its init parameter.
 		let documentsDirectory = FileManager.documentsDirectory
 		fileUrl = documentsDirectory.appendingPathComponent(FileLogWriter.defaultLogFileName)

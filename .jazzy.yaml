@@ -14,9 +14,7 @@ objc: false
 swift_build_tool: xcodebuild
 xcodebuild_arguments:
   - build
-  - -workspace
-  - INLogger.xcworkspace
   - -scheme
   - INLogger
   - -destination
-  - platform=iOS Simulator,OS=latest,name=iPhone 13
+  - platform=iOS Simulator,OS=latest,name=iPhone 16

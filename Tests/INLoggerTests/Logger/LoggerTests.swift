@@ -1,37 +1,31 @@
 @testable import INLogger
 import XCTest
 
-class LoggerTests: XCTestCase {
-	var logEntryCreator: SimpleLogEntryCreator!
-	var logFilter: LogFilterMock!
-	var logFormatter: LogFormatterMock!
-	var logWriter: LogWriterMock!
-	var pipeline: LogPipeline!
-	var logger: Logger!
-
-	override func setUp() {
-		logEntryCreator = SimpleLogEntryCreator()
-		logFilter = LogFilterMock()
-		logFormatter = LogFormatterMock()
-		logWriter = LogWriterMock()
-		pipeline = LogPipeline(filter: logFilter, formatter: logFormatter, writer: [logWriter])
-		logger = Logger(entryCreator: logEntryCreator, pipelines: [pipeline])
-	}
-
+@MainActor
+class LoggerTests: XCTestCase, Sendable {
+	/// Creates a logger with the injected check for the LogFilterMock.
 	/// Modifies the log filter to return false which makes the pipeline to stop.
 	/// Also injects a check into the filter which gets called with the passed log entry
 	/// which can be used to ensures that the logged entry is correctly filled by the logger.
-	private func injectLogEntryCheck(_ check: @escaping (_ entry: LogEntry) -> Void) {
-		logFilter.shouldEntryBeLoggedMock = { entry in
-			check(entry)
-			// Prevent the pipeline to continue because we are not interested in the formatter or writer in these tests.
-			return false
-		}
+	private func makeLogger(_ check: @escaping @Sendable (_ entry: LogEntry) -> Void) -> Logger {
+		let logFilter = LogFilterMock(
+			shouldEntryBeLoggedMock: { entry in
+				check(entry)
+				// Prevent the pipeline to continue because we are not interested in the formatter or writer in these tests.
+				return false
+			}
+		)
+		let logEntryCreator = SimpleLogEntryCreator()
+		let logFormatter = LogFormatterMock()
+		let logWriter = LogWriterMock()
+		let pipeline = LogPipeline(filter: logFilter, formatter: logFormatter, writer: [logWriter])
+		let logger = Logger(entryCreator: logEntryCreator, pipelines: [pipeline])
+		return logger
 	}
 
 	func testDebugLog() throws {
 		let message = "Debug Message"
-		injectLogEntryCheck { entry in
+		let logger = makeLogger { entry in
 			XCTAssertTrue(entry.file.hasSuffix("LoggerTests.swift"))
 			XCTAssertEqual(entry.function, "testDebugLog()")
 			XCTAssertEqual(entry.line, 1)
@@ -47,7 +41,7 @@ class LoggerTests: XCTestCase {
 
 	func testInfoLog() {
 		let message = "Info Message"
-		injectLogEntryCheck { entry in
+		let logger = makeLogger { entry in
 			XCTAssertTrue(entry.file.hasSuffix("LoggerTests.swift"))
 			XCTAssertEqual(entry.function, "testInfoLog()")
 			XCTAssertEqual(entry.line, 2)
@@ -63,7 +57,7 @@ class LoggerTests: XCTestCase {
 
 	func testWarnLog() {
 		let message = "Warn Message"
-		injectLogEntryCheck { entry in
+		let logger = makeLogger { entry in
 			XCTAssertTrue(entry.file.hasSuffix("LoggerTests.swift"))
 			XCTAssertEqual(entry.function, "testWarnLog()")
 			XCTAssertEqual(entry.line, 3)
@@ -79,7 +73,7 @@ class LoggerTests: XCTestCase {
 
 	func testErrorLog() {
 		let message = "Error Message"
-		injectLogEntryCheck { entry in
+		let logger = makeLogger { entry in
 			XCTAssertTrue(entry.file.hasSuffix("LoggerTests.swift"))
 			XCTAssertEqual(entry.function, "testErrorLog()")
 			XCTAssertEqual(entry.line, 4)
@@ -95,7 +89,7 @@ class LoggerTests: XCTestCase {
 
 	func testFatalLog() {
 		let message = "Fatal Message"
-		injectLogEntryCheck { entry in
+		let logger = makeLogger { entry in
 			XCTAssertTrue(entry.file.hasSuffix("LoggerTests.swift"))
 			XCTAssertEqual(entry.function, "testFatalLog()")
 			XCTAssertEqual(entry.line, 5)
@@ -112,15 +106,26 @@ class LoggerTests: XCTestCase {
 	func testLoggerHasNoRetainCycle() {
 		// Make the components pass to ensure the pipeline components are fully resolved and retained.
 		let pipelineExpectation = expectation(description: "pipelineExpectation")
-		logFilter.shouldEntryBeLoggedMock = { _ in
-			true
-		}
-		logFormatter.formatEntryMock = { _ in
-			""
-		}
-		logWriter.writeMock = { _ in
-			pipelineExpectation.fulfill()
-		}
+		let logFilter = LogFilterMock(
+			shouldEntryBeLoggedMock: { _ in
+				true
+			}
+		)
+		let logFormatter = LogFormatterMock(
+			formatEntryMock: { _ in
+				""
+			}
+		)
+		let logWriter = LogWriterMock(
+			writeMock: { _ in
+				pipelineExpectation.fulfill()
+			}
+		)
+
+		let logEntryCreator = SimpleLogEntryCreator()
+		let pipeline = LogPipeline(filter: logFilter, formatter: logFormatter, writer: [logWriter])
+		let logger = Logger(entryCreator: logEntryCreator, pipelines: [pipeline])
+
 		logger.debug("Start")
 
 		waitForExpectations(timeout: 1)
@@ -132,23 +137,21 @@ class LoggerTests: XCTestCase {
 		logger.processingQueue.sync {}
 
 		// Now test the retain cycle if there is anything kept in memory.
-		weak var weakLogEntryCreator = logEntryCreator
-		weak var weakLogFilter = logFilter
-		weak var weakLogFormatter = logFormatter
-		weak var weakLogWriter = logWriter
-		weak var weakLogger = logger
+		func trackForMemoryLeaks(_ object: AnyObject, file: StaticString = #filePath, line: UInt = #line) {
+			addTeardownBlock { [weak object] in
+				XCTAssertNil(
+					object,
+					"Potential memory leak detected. Instance should have been deallocated.",
+					file: file,
+					line: line
+				)
+			}
+		}
 
-		logEntryCreator = nil
-		logFilter = nil
-		logFormatter = nil
-		logWriter = nil
-		pipeline = nil
-		logger = nil
-
-		XCTAssertNil(weakLogEntryCreator)
-		XCTAssertNil(weakLogger)
-		XCTAssertNil(weakLogWriter)
-		XCTAssertNil(weakLogFormatter)
-		XCTAssertNil(weakLogFilter)
+		trackForMemoryLeaks(logEntryCreator)
+		trackForMemoryLeaks(logFilter)
+		trackForMemoryLeaks(logFormatter)
+		trackForMemoryLeaks(logWriter)
+		trackForMemoryLeaks(logger)
 	}
 }
