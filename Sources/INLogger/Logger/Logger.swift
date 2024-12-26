@@ -2,7 +2,8 @@ import Foundation
 
 /// A logger for collecting debug or other info messages in code and to process them
 /// by writing them to the console or a file.
-public final class Logger {
+/// Uses internally a serial queue which ensures concurrency safety.
+public final class Logger: @unchecked Sendable {
 	/// A reference to the singleton instance of the `Logger`.
 	///
 	/// The default one has no pipelines injected and thus does not log anything,
@@ -16,7 +17,8 @@ public final class Logger {
 	/// When creating a new logger instance then consider using different configurations
 	/// by injecting different pipelines for different builds, i.e. inject a console writer instead
 	/// of a file writer for debug builds compared to release builds.
-	public static var shared: Logger = .init(entryCreator: SimpleLogEntryCreator(), pipelines: [])
+	public nonisolated(unsafe)
+	static var shared: Logger = .init(entryCreator: SimpleLogEntryCreator(), pipelines: [])
 
 	/// The queue on which the pipelines are processing the log entries.
 	/// This ensures that each log is processed sequentially.
@@ -136,43 +138,53 @@ public final class Logger {
 
 	// MARK: - Static methods
 
-	public static func debug(_ message: String, tags: [LogTag] = [], file: String = #file, function: String = #function, line: Int32 = #line) {
+	public nonisolated(unsafe)
+	static func debug(_ message: String, tags: [LogTag] = [], file: String = #file, function: String = #function, line: Int32 = #line) {
 		Logger.shared.log(message: message, level: .debug, tags: tags, file: file, function: function, line: line)
 	}
 
-	public static func debug(_ message: String, tag: LogTag, file: String = #file, function: String = #function, line: Int32 = #line) {
+	public nonisolated(unsafe)
+	static func debug(_ message: String, tag: LogTag, file: String = #file, function: String = #function, line: Int32 = #line) {
 		Logger.shared.log(message: message, level: .debug, tags: [tag], file: file, function: function, line: line)
 	}
 
-	public static func info(_ message: String, tags: [LogTag] = [], file: String = #file, function: String = #function, line: Int32 = #line) {
+	public nonisolated(unsafe)
+	static func info(_ message: String, tags: [LogTag] = [], file: String = #file, function: String = #function, line: Int32 = #line) {
 		Logger.shared.log(message: message, level: .info, tags: tags, file: file, function: function, line: line)
 	}
 
-	public static func info(_ message: String, tag: LogTag, file: String = #file, function: String = #function, line: Int32 = #line) {
+	public nonisolated(unsafe)
+	static func info(_ message: String, tag: LogTag, file: String = #file, function: String = #function, line: Int32 = #line) {
 		Logger.shared.log(message: message, level: .info, tags: [tag], file: file, function: function, line: line)
 	}
 
-	public static func warn(_ message: String, tags: [LogTag] = [], file: String = #file, function: String = #function, line: Int32 = #line) {
+	public nonisolated(unsafe)
+	static func warn(_ message: String, tags: [LogTag] = [], file: String = #file, function: String = #function, line: Int32 = #line) {
 		Logger.shared.log(message: message, level: .warn, tags: tags, file: file, function: function, line: line)
 	}
 
-	public static func warn(_ message: String, tag: LogTag, file: String = #file, function: String = #function, line: Int32 = #line) {
+	public nonisolated(unsafe)
+	static func warn(_ message: String, tag: LogTag, file: String = #file, function: String = #function, line: Int32 = #line) {
 		Logger.shared.log(message: message, level: .warn, tags: [tag], file: file, function: function, line: line)
 	}
 
-	public static func error(_ message: String, tags: [LogTag] = [], file: String = #file, function: String = #function, line: Int32 = #line) {
+	public nonisolated(unsafe)
+	static func error(_ message: String, tags: [LogTag] = [], file: String = #file, function: String = #function, line: Int32 = #line) {
 		Logger.shared.log(message: message, level: .error, tags: tags, file: file, function: function, line: line)
 	}
 
-	public static func error(_ message: String, tag: LogTag, file: String = #file, function: String = #function, line: Int32 = #line) {
+	public nonisolated(unsafe)
+	static func error(_ message: String, tag: LogTag, file: String = #file, function: String = #function, line: Int32 = #line) {
 		Logger.shared.log(message: message, level: .error, tags: [tag], file: file, function: function, line: line)
 	}
 
-	public static func fatal(_ message: String, tags: [LogTag] = [], file: String = #file, function: String = #function, line: Int32 = #line) {
+	public nonisolated(unsafe)
+	static func fatal(_ message: String, tags: [LogTag] = [], file: String = #file, function: String = #function, line: Int32 = #line) {
 		Logger.shared.log(message: message, level: .fatal, tags: tags, processOnThread: true, file: file, function: function, line: line)
 	}
 
-	public static func fatal(_ message: String, tag: LogTag, file: String = #file, function: String = #function, line: Int32 = #line) {
+	public nonisolated(unsafe)
+	static func fatal(_ message: String, tag: LogTag, file: String = #file, function: String = #function, line: Int32 = #line) {
 		Logger.shared.log(message: message, level: .fatal, tags: [tag], processOnThread: true, file: file, function: function, line: line)
 	}
 }

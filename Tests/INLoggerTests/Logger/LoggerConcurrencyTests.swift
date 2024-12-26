@@ -1,11 +1,25 @@
 @testable import INLogger
 import XCTest
 
-class LoggerConcurrencyTests: XCTestCase {
-	func testLoggerEnqueuesLogs() {
+@MainActor
+class LoggerConcurrencyTests: XCTestCase, Sendable {
+	func testLoggerEnqueuesLogs() async {
 		/// We are collecting here the order of the writer calls by their
 		/// unique ID together with the message processed.
-		var writerCalls = [WriterCall]()
+		actor WriterCallActor {
+			var writerCalls = [WriterCall]()
+
+			func append(_ writerCall: WriterCall) {
+				writerCalls.append(writerCall)
+			}
+
+			var logger: Logger?
+
+			func setLogger(_ logger: Logger) {
+				self.logger = logger
+			}
+		}
+		let writerCallActor = WriterCallActor()
 
 		/// This is the first message which gets passed to two pipelines and starts the test.
 		let startMessage = "Start Message"
@@ -43,24 +57,75 @@ class LoggerConcurrencyTests: XCTestCase {
 
 		let logFilterExpectation = expectation(description: "logFilterExpectation")
 		logFilterExpectation.expectedFulfillmentCount = totalMessagesLogged * 2
-		let logFilter = LogFilterMock()
-		logFilter.shouldEntryBeLoggedMock = { _ in
-			logFilterExpectation.fulfill()
-			return true // Just pass and process the pipeline
-		}
+		let logFilter = LogFilterMock(
+			shouldEntryBeLoggedMock: { _ in
+				logFilterExpectation.fulfill()
+				return true // Just pass and process the pipeline
+			}
+		)
 
 		let logFormatterExpectation = expectation(description: "logFormatterExpectation")
 		logFormatterExpectation.expectedFulfillmentCount = totalMessagesLogged * 2
-		let logFormatter = LogFormatterMock()
-		logFormatter.formatEntryMock = { entry in
-			logFormatterExpectation.fulfill()
-			return entry.message
-		}
+		let logFormatter = LogFormatterMock(
+			formatEntryMock: { entry in
+				logFormatterExpectation.fulfill()
+				return entry.message
+			}
+		)
 
-		let logWriter11 = LogWriterMock()
-		let logWriter12 = LogWriterMock()
-		let logWriter21 = LogWriterMock()
-		let logWriter22 = LogWriterMock()
+		let logWriter11Expectation = expectation(description: "logWriter11Expectation")
+		logWriter11Expectation.expectedFulfillmentCount = totalMessagesLogged
+		let logWriter11 = LogWriterMock(
+			writeMock: { message in
+				Task { @MainActor in
+					await writerCallActor.append(WriterCall(11, message))
+					// Writer 11 gets triggered by the start message to
+					// immediately log the interrupting message 1.
+					if message == startMessage {
+						await writerCallActor.logger?.debug(interruptingMessage1)
+					}
+					logWriter11Expectation.fulfill()
+				}
+			}
+		)
+
+		let logWriter12Expectation = expectation(description: "logWriter12Expectation")
+		logWriter12Expectation.expectedFulfillmentCount = totalMessagesLogged
+		let logWriter12 = LogWriterMock(
+			writeMock: { message in
+				Task { @MainActor in
+					await writerCallActor.append(WriterCall(12, message))
+					logWriter12Expectation.fulfill()
+				}
+			}
+		)
+
+		let logWriter21Expectation = expectation(description: "logWriter21Expectation")
+		logWriter21Expectation.expectedFulfillmentCount = totalMessagesLogged
+		let logWriter21 = LogWriterMock(
+			writeMock: { message in
+				Task { @MainActor in
+					await writerCallActor.append(WriterCall(21, message))
+					// Writer 21 gets triggered by the start message to
+					// immediately log the interrupting message 2.
+					if message == startMessage {
+						await writerCallActor.logger?.debug(interruptingMessage2)
+					}
+					logWriter21Expectation.fulfill()
+				}
+			}
+		)
+
+		let logWriter22Expectation = expectation(description: "logWriter22Expectation")
+		logWriter22Expectation.expectedFulfillmentCount = totalMessagesLogged
+		let logWriter22 = LogWriterMock(
+			writeMock: { message in
+				Task { @MainActor in
+					await writerCallActor.append(WriterCall(22, message))
+					logWriter22Expectation.fulfill()
+				}
+			}
+		)
 
 		let logEntryCreator = SimpleLogEntryCreator()
 
@@ -68,53 +133,25 @@ class LoggerConcurrencyTests: XCTestCase {
 		let pipeline2 = LogPipeline(filter: logFilter, formatter: logFormatter, writer: [logWriter21, logWriter22])
 
 		let logger = Logger(entryCreator: logEntryCreator, pipelines: [pipeline1, pipeline2])
-
-		// Configuration of the writers.
-
-		let logWriter11Expectation = expectation(description: "logWriter11Expectation")
-		logWriter11Expectation.expectedFulfillmentCount = totalMessagesLogged
-		logWriter11.writeMock = { message in
-			writerCalls.append(WriterCall(11, message))
-			// Writer 11 gets triggered by the start message to
-			// immediately log the interrupting message 1.
-			if message == startMessage {
-				logger.debug(interruptingMessage1)
-			}
-			logWriter11Expectation.fulfill()
-		}
-
-		let logWriter12Expectation = expectation(description: "logWriter12Expectation")
-		logWriter12Expectation.expectedFulfillmentCount = totalMessagesLogged
-		logWriter12.writeMock = { message in
-			writerCalls.append(WriterCall(12, message))
-			logWriter12Expectation.fulfill()
-		}
-
-		let logWriter21Expectation = expectation(description: "logWriter21Expectation")
-		logWriter21Expectation.expectedFulfillmentCount = totalMessagesLogged
-		logWriter21.writeMock = { message in
-			writerCalls.append(WriterCall(21, message))
-			// Writer 21 gets triggered by the start message to
-			// immediately log the interrupting message 2.
-			if message == startMessage {
-				logger.debug(interruptingMessage2)
-			}
-			logWriter21Expectation.fulfill()
-		}
-
-		let logWriter22Expectation = expectation(description: "logWriter22Expectation")
-		logWriter22Expectation.expectedFulfillmentCount = totalMessagesLogged
-		logWriter22.writeMock = { message in
-			writerCalls.append(WriterCall(22, message))
-			logWriter22Expectation.fulfill()
-		}
+		await writerCallActor.setLogger(logger)
 
 		// This starts the test.
 		logger.debug(startMessage)
 
-		waitForExpectations(timeout: 1)
+		await fulfillment(
+			of: [
+				logFilterExpectation,
+				logFormatterExpectation,
+				logWriter11Expectation,
+				logWriter12Expectation,
+				logWriter21Expectation,
+				logWriter22Expectation
+			],
+			timeout: 1
+		)
 
-		XCTAssertEqual(writerCalls, expectedCalls)
+		let loggedWriterCalls = await writerCallActor.writerCalls
+		XCTAssertEqual(loggedWriterCalls, expectedCalls)
 	}
 
 	/// When the side-effect is not executed immediately then it will be
@@ -124,19 +161,22 @@ class LoggerConcurrencyTests: XCTestCase {
 	func testMessageSideEffectsAreImmediatelyExecutedOnLogCall() {
 		let printActive = false // when true then the debugPrint messages print
 		// the comments to the console, useful for debugging this test
-		func debugPrint(_ message: String) { if printActive { print(message) } }
+		@Sendable func debugPrint(_ message: String) { if printActive { print(message) } }
 
 		let logEntryCreator = SimpleLogEntryCreator()
-		let logFilter = LogFilterMock()
-		logFilter.shouldEntryBeLoggedMock = { _ in
-			true // Just pass and process the pipeline
-		}
-		let logFormatter = LogFormatterMock()
-		logFormatter.formatEntryMock = { entry in
-			entry.message // Just return the message
-		}
-		let logWriter = LogWriterMock()
-		logWriter.writeMock = { _ in }
+		let logFilter = LogFilterMock(
+			shouldEntryBeLoggedMock: { _ in
+				true // Just pass and process the pipeline
+			}
+		)
+		let logFormatter = LogFormatterMock(
+			formatEntryMock: { entry in
+				entry.message // Just return the message
+			}
+		)
+		let logWriter = LogWriterMock(
+			writeMock: { _ in }
+		)
 
 		let pipeline = LogPipeline(filter: logFilter, formatter: logFormatter, writer: [logWriter])
 		let logger = Logger(entryCreator: logEntryCreator, pipelines: [pipeline])

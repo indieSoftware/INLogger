@@ -1,11 +1,13 @@
 @testable import INLogger
 import XCTest
 
-class LoggerCreateEntryTests: XCTestCase {
+@MainActor
+class LoggerCreateEntryTests: XCTestCase, Sendable {
 	var logEntryCreator: LogEntryCreatorMock!
 	var logger: Logger!
 
-	override func setUp() {
+	override func setUp() async throws {
+		try await super.setUp()
 		logEntryCreator = LogEntryCreatorMock()
 		logger = Logger(entryCreator: logEntryCreator, pipelines: [])
 	}
@@ -53,13 +55,14 @@ class LoggerCreateEntryTests: XCTestCase {
 			return outputEntry
 		}
 
-		let logFilter = LogFilterMock()
 		let filterExpectation = expectation(description: "filterExpectation")
-		logFilter.shouldEntryBeLoggedMock = { entry in
-			XCTAssertEqual(entry, outputEntry)
-			filterExpectation.fulfill()
-			return false // Stop pipeline here
-		}
+		let logFilter = LogFilterMock(
+			shouldEntryBeLoggedMock: { entry in
+				XCTAssertEqual(entry, outputEntry)
+				filterExpectation.fulfill()
+				return false // Stop pipeline here
+			}
+		)
 
 		let pipeline = LogPipeline(filter: logFilter, formatter: LogFormatterMock(), writer: [])
 		logger = Logger(entryCreator: logEntryCreator, pipelines: [pipeline])

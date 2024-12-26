@@ -13,32 +13,44 @@ class LogEntryCreatorMock: LogEntryCreator {
 	}
 }
 
-final class LogFilterMock: LogFilter, @unchecked Sendable {
-	var shouldEntryBeLoggedMock: (_ entry: LogEntry) -> Bool = { _ in
+final class LogFilterMock: LogFilter, Sendable {
+	init(shouldEntryBeLoggedMock: @escaping @Sendable (_: LogEntry) -> Bool = { _ in
 		XCTFail()
 		return false
+	}) {
+		self.shouldEntryBeLoggedMock = shouldEntryBeLoggedMock
 	}
+
+	let shouldEntryBeLoggedMock: @Sendable (_ entry: LogEntry) -> Bool
 
 	func shouldEntryBeLogged(_ entry: LogEntry) -> Bool {
 		shouldEntryBeLoggedMock(entry)
 	}
 }
 
-final class LogFormatterMock: LogFormatter, @unchecked Sendable {
-	var formatEntryMock: (_ entry: LogEntry) -> String = { _ in
+final class LogFormatterMock: LogFormatter, Sendable {
+	init(formatEntryMock: @escaping @Sendable (_ entry: LogEntry) -> String = { _ in
 		XCTFail()
 		return ""
+	}) {
+		self.formatEntryMock = formatEntryMock
 	}
+
+	let formatEntryMock: @Sendable (_ entry: LogEntry) -> String
 
 	func formatEntry(_ entry: LogEntry) -> String {
 		formatEntryMock(entry)
 	}
 }
 
-final class LogWriterMock: LogWriter, @unchecked Sendable {
-	var writeMock: (_ string: String) -> Void = { _ in
+final class LogWriterMock: LogWriter, Sendable {
+	init(writeMock: @escaping @Sendable (_ string: String) -> Void = { _ in
 		XCTFail()
+	}) {
+		self.writeMock = writeMock
 	}
+
+	let writeMock: @Sendable (_ string: String) -> Void
 
 	func write(_ string: String) {
 		writeMock(string)

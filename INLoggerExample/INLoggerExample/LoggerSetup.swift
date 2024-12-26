@@ -4,6 +4,7 @@ import INLogger
 /// Some convenience Logger setups.
 /// Run one of these setup methods during app start to create a corresponding shared Logger instance.
 public enum LoggerSetup {
+	@MainActor
 	public static func simpleLogger() {
 		let consoleLogPipeline = LogPipeline(
 			filter: DevelopmentLogFilter(),
@@ -16,6 +17,7 @@ public enum LoggerSetup {
 		)
 	}
 
+	@MainActor
 	public static func developmentLogger() {
 		let consoleLogPipeline = LogPipeline(
 			filter: DevelopmentLogFilter(),
@@ -28,6 +30,7 @@ public enum LoggerSetup {
 		)
 	}
 
+	@MainActor
 	public static func fileLogger() {
 		let consoleLogPipeline = LogPipeline(
 			filter: ReleaseLogFilter(),
@@ -48,6 +51,7 @@ public enum LoggerSetup {
 		Logger.shared.info("Log file path: \(fileLogWriter.fileFolder.path)", tag: .general)
 	}
 
+	@MainActor
 	public static func disabledLogger() {
 		Logger.shared = Logger(entryCreator: SimpleLogEntryCreator(), pipelines: [])
 	}
