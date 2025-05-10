@@ -13,7 +13,7 @@ let package = Package(
 		),
     ],
     dependencies: [
-		.package(url: "https://github.com/indieSoftware/INCommons.git", from: "4.0.0"),
+		.package(url: "https://github.com/indieSoftware/INCommons.git", from: "4.1.0"),
     ],
     targets: [
         .target(
