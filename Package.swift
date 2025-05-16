@@ -5,7 +5,7 @@ import PackageDescription
 
 let package = Package(
     name: "INLogger",
-    platforms: [.iOS("16.0")],
+    platforms: [.iOS("17.0")],
     products: [
         .library(
             name: "INLogger",
@@ -13,7 +13,7 @@ let package = Package(
 		),
     ],
     dependencies: [
-		.package(url: "https://github.com/indieSoftware/INCommons.git", from: "4.1.0"),
+		.package(url: "https://github.com/indieSoftware/INCommons.git", from: "4.2.0"),
     ],
     targets: [
         .target(
