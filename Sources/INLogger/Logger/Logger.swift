@@ -94,6 +94,18 @@ public final class Logger: @unchecked Sendable {
 		}
 	}
 
+	/// Waits for the internal log queue to deplete.
+	///
+	/// Useful to ensure all logs so far has been processed before continuing with a specific task,
+	/// like exporting the logs.
+	public func flushQueue() async {
+		await withCheckedContinuation { continuation in
+			processingQueue.async {
+				continuation.resume()
+			}
+		}
+	}
+
 	// MARK: - Convenience methods
 
 	public func debug(_ message: String, tags: [LogTag] = [], file: String = #file, function: String = #function, line: Int32 = #line) {
@@ -138,52 +150,52 @@ public final class Logger: @unchecked Sendable {
 
 	// MARK: - Static methods
 
-	public nonisolated(unsafe)
+	public nonisolated
 	static func debug(_ message: String, tags: [LogTag] = [], file: String = #file, function: String = #function, line: Int32 = #line) {
 		Logger.shared.log(message: message, level: .debug, tags: tags, file: file, function: function, line: line)
 	}
 
-	public nonisolated(unsafe)
+	public nonisolated
 	static func debug(_ message: String, tag: LogTag, file: String = #file, function: String = #function, line: Int32 = #line) {
 		Logger.shared.log(message: message, level: .debug, tags: [tag], file: file, function: function, line: line)
 	}
 
-	public nonisolated(unsafe)
+	public nonisolated
 	static func info(_ message: String, tags: [LogTag] = [], file: String = #file, function: String = #function, line: Int32 = #line) {
 		Logger.shared.log(message: message, level: .info, tags: tags, file: file, function: function, line: line)
 	}
 
-	public nonisolated(unsafe)
+	public nonisolated
 	static func info(_ message: String, tag: LogTag, file: String = #file, function: String = #function, line: Int32 = #line) {
 		Logger.shared.log(message: message, level: .info, tags: [tag], file: file, function: function, line: line)
 	}
 
-	public nonisolated(unsafe)
+	public nonisolated
 	static func warn(_ message: String, tags: [LogTag] = [], file: String = #file, function: String = #function, line: Int32 = #line) {
 		Logger.shared.log(message: message, level: .warn, tags: tags, file: file, function: function, line: line)
 	}
 
-	public nonisolated(unsafe)
+	public nonisolated
 	static func warn(_ message: String, tag: LogTag, file: String = #file, function: String = #function, line: Int32 = #line) {
 		Logger.shared.log(message: message, level: .warn, tags: [tag], file: file, function: function, line: line)
 	}
 
-	public nonisolated(unsafe)
+	public nonisolated
 	static func error(_ message: String, tags: [LogTag] = [], file: String = #file, function: String = #function, line: Int32 = #line) {
 		Logger.shared.log(message: message, level: .error, tags: tags, file: file, function: function, line: line)
 	}
 
-	public nonisolated(unsafe)
+	public nonisolated
 	static func error(_ message: String, tag: LogTag, file: String = #file, function: String = #function, line: Int32 = #line) {
 		Logger.shared.log(message: message, level: .error, tags: [tag], file: file, function: function, line: line)
 	}
 
-	public nonisolated(unsafe)
+	public nonisolated
 	static func fatal(_ message: String, tags: [LogTag] = [], file: String = #file, function: String = #function, line: Int32 = #line) {
 		Logger.shared.log(message: message, level: .fatal, tags: tags, processOnThread: true, file: file, function: function, line: line)
 	}
 
-	public nonisolated(unsafe)
+	public nonisolated
 	static func fatal(_ message: String, tag: LogTag, file: String = #file, function: String = #function, line: Int32 = #line) {
 		Logger.shared.log(message: message, level: .fatal, tags: [tag], processOnThread: true, file: file, function: function, line: line)
 	}

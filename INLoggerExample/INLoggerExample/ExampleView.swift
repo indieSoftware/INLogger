@@ -34,6 +34,12 @@ struct ExampleView: View {
 						Text("Disable logger")
 					})
 
+					Button(action: {
+						viewModel.testFlush()
+					}, label: {
+						Text("Test flush")
+					})
+
 					Spacer().frame(height: 30)
 				}
 

@@ -1,13 +1,13 @@
 {
-  "originHash" : "29d992bf4fea3f4d1d3c0056e361f6b07c2449fecf47a3804baa944a488cfbb7",
+  "originHash" : "16d79e9834324ecc54987e5ee7e755296fa5ef619d7a1f01b16e09b4c96c8b73",
   "pins" : [
     {
       "identity" : "incommons",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/indieSoftware/INCommons.git",
       "state" : {
-        "revision" : "dac65d3bdbac1163fd6d9cfa6a7fc5205217469b",
-        "version" : "4.2.0"
+        "revision" : "d5a232fd691fdc0bef6ff1b27ea073b26de415b4",
+        "version" : "4.3.0"
       }
     }
   ],

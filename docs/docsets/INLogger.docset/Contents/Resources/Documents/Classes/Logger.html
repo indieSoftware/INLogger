@@ -412,6 +412,39 @@ providing true as parameter.</p>
                     </section>
                   </div>
                 </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8INLogger6LoggerC10flushQueueyyYaF"></a>
+                    <a name="//apple_ref/swift/Method/flushQueue()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8INLogger6LoggerC10flushQueueyyYaF">flushQueue()</a>
+                    </code>
+                      <span class="declaration-note">
+                        Asynchronous
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Waits for the internal log queue to deplete.</p>
+
+<p>Useful to ensure all logs so far has been processed before continuing with a specific task,
+like exporting the logs.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">flushQueue</span><span class="p">()</span> <span class="k">async</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
               </ul>
             </div>
             <div class="task-group">
@@ -728,7 +761,7 @@ providing true as parameter.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">nonisolated</span><span class="p">(</span><span class="n">unsafe</span><span class="p">)</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">debug</span><span class="p">(</span><span class="n">_</span> <span class="nv">message</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">tags</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Structs/LogTag.html">LogTag</a></span><span class="p">]</span> <span class="o">=</span> <span class="p">[],</span> <span class="nv">file</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="k">#file</span><span class="p">,</span> <span class="nv">function</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="k">#function</span><span class="p">,</span> <span class="nv">line</span><span class="p">:</span> <span class="kt">Int32</span> <span class="o">=</span> <span class="k">#line</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">nonisolated</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">debug</span><span class="p">(</span><span class="n">_</span> <span class="nv">message</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">tags</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Structs/LogTag.html">LogTag</a></span><span class="p">]</span> <span class="o">=</span> <span class="p">[],</span> <span class="nv">file</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="k">#file</span><span class="p">,</span> <span class="nv">function</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="k">#function</span><span class="p">,</span> <span class="nv">line</span><span class="p">:</span> <span class="kt">Int32</span> <span class="o">=</span> <span class="k">#line</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -755,7 +788,7 @@ providing true as parameter.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">nonisolated</span><span class="p">(</span><span class="n">unsafe</span><span class="p">)</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">debug</span><span class="p">(</span><span class="n">_</span> <span class="nv">message</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">tag</span><span class="p">:</span> <span class="kt"><a href="../Structs/LogTag.html">LogTag</a></span><span class="p">,</span> <span class="nv">file</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="k">#file</span><span class="p">,</span> <span class="nv">function</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="k">#function</span><span class="p">,</span> <span class="nv">line</span><span class="p">:</span> <span class="kt">Int32</span> <span class="o">=</span> <span class="k">#line</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">nonisolated</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">debug</span><span class="p">(</span><span class="n">_</span> <span class="nv">message</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">tag</span><span class="p">:</span> <span class="kt"><a href="../Structs/LogTag.html">LogTag</a></span><span class="p">,</span> <span class="nv">file</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="k">#file</span><span class="p">,</span> <span class="nv">function</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="k">#function</span><span class="p">,</span> <span class="nv">line</span><span class="p">:</span> <span class="kt">Int32</span> <span class="o">=</span> <span class="k">#line</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -782,7 +815,7 @@ providing true as parameter.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">nonisolated</span><span class="p">(</span><span class="n">unsafe</span><span class="p">)</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">info</span><span class="p">(</span><span class="n">_</span> <span class="nv">message</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">tags</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Structs/LogTag.html">LogTag</a></span><span class="p">]</span> <span class="o">=</span> <span class="p">[],</span> <span class="nv">file</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="k">#file</span><span class="p">,</span> <span class="nv">function</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="k">#function</span><span class="p">,</span> <span class="nv">line</span><span class="p">:</span> <span class="kt">Int32</span> <span class="o">=</span> <span class="k">#line</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">nonisolated</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">info</span><span class="p">(</span><span class="n">_</span> <span class="nv">message</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">tags</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Structs/LogTag.html">LogTag</a></span><span class="p">]</span> <span class="o">=</span> <span class="p">[],</span> <span class="nv">file</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="k">#file</span><span class="p">,</span> <span class="nv">function</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="k">#function</span><span class="p">,</span> <span class="nv">line</span><span class="p">:</span> <span class="kt">Int32</span> <span class="o">=</span> <span class="k">#line</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -809,7 +842,7 @@ providing true as parameter.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">nonisolated</span><span class="p">(</span><span class="n">unsafe</span><span class="p">)</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">info</span><span class="p">(</span><span class="n">_</span> <span class="nv">message</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">tag</span><span class="p">:</span> <span class="kt"><a href="../Structs/LogTag.html">LogTag</a></span><span class="p">,</span> <span class="nv">file</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="k">#file</span><span class="p">,</span> <span class="nv">function</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="k">#function</span><span class="p">,</span> <span class="nv">line</span><span class="p">:</span> <span class="kt">Int32</span> <span class="o">=</span> <span class="k">#line</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">nonisolated</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">info</span><span class="p">(</span><span class="n">_</span> <span class="nv">message</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">tag</span><span class="p">:</span> <span class="kt"><a href="../Structs/LogTag.html">LogTag</a></span><span class="p">,</span> <span class="nv">file</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="k">#file</span><span class="p">,</span> <span class="nv">function</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="k">#function</span><span class="p">,</span> <span class="nv">line</span><span class="p">:</span> <span class="kt">Int32</span> <span class="o">=</span> <span class="k">#line</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -836,7 +869,7 @@ providing true as parameter.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">nonisolated</span><span class="p">(</span><span class="n">unsafe</span><span class="p">)</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">warn</span><span class="p">(</span><span class="n">_</span> <span class="nv">message</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">tags</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Structs/LogTag.html">LogTag</a></span><span class="p">]</span> <span class="o">=</span> <span class="p">[],</span> <span class="nv">file</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="k">#file</span><span class="p">,</span> <span class="nv">function</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="k">#function</span><span class="p">,</span> <span class="nv">line</span><span class="p">:</span> <span class="kt">Int32</span> <span class="o">=</span> <span class="k">#line</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">nonisolated</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">warn</span><span class="p">(</span><span class="n">_</span> <span class="nv">message</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">tags</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Structs/LogTag.html">LogTag</a></span><span class="p">]</span> <span class="o">=</span> <span class="p">[],</span> <span class="nv">file</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="k">#file</span><span class="p">,</span> <span class="nv">function</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="k">#function</span><span class="p">,</span> <span class="nv">line</span><span class="p">:</span> <span class="kt">Int32</span> <span class="o">=</span> <span class="k">#line</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -863,7 +896,7 @@ providing true as parameter.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">nonisolated</span><span class="p">(</span><span class="n">unsafe</span><span class="p">)</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">warn</span><span class="p">(</span><span class="n">_</span> <span class="nv">message</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">tag</span><span class="p">:</span> <span class="kt"><a href="../Structs/LogTag.html">LogTag</a></span><span class="p">,</span> <span class="nv">file</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="k">#file</span><span class="p">,</span> <span class="nv">function</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="k">#function</span><span class="p">,</span> <span class="nv">line</span><span class="p">:</span> <span class="kt">Int32</span> <span class="o">=</span> <span class="k">#line</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">nonisolated</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">warn</span><span class="p">(</span><span class="n">_</span> <span class="nv">message</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">tag</span><span class="p">:</span> <span class="kt"><a href="../Structs/LogTag.html">LogTag</a></span><span class="p">,</span> <span class="nv">file</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="k">#file</span><span class="p">,</span> <span class="nv">function</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="k">#function</span><span class="p">,</span> <span class="nv">line</span><span class="p">:</span> <span class="kt">Int32</span> <span class="o">=</span> <span class="k">#line</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -890,7 +923,7 @@ providing true as parameter.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">nonisolated</span><span class="p">(</span><span class="n">unsafe</span><span class="p">)</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">error</span><span class="p">(</span><span class="n">_</span> <span class="nv">message</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">tags</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Structs/LogTag.html">LogTag</a></span><span class="p">]</span> <span class="o">=</span> <span class="p">[],</span> <span class="nv">file</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="k">#file</span><span class="p">,</span> <span class="nv">function</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="k">#function</span><span class="p">,</span> <span class="nv">line</span><span class="p">:</span> <span class="kt">Int32</span> <span class="o">=</span> <span class="k">#line</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">nonisolated</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">error</span><span class="p">(</span><span class="n">_</span> <span class="nv">message</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">tags</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Structs/LogTag.html">LogTag</a></span><span class="p">]</span> <span class="o">=</span> <span class="p">[],</span> <span class="nv">file</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="k">#file</span><span class="p">,</span> <span class="nv">function</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="k">#function</span><span class="p">,</span> <span class="nv">line</span><span class="p">:</span> <span class="kt">Int32</span> <span class="o">=</span> <span class="k">#line</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -917,7 +950,7 @@ providing true as parameter.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">nonisolated</span><span class="p">(</span><span class="n">unsafe</span><span class="p">)</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">error</span><span class="p">(</span><span class="n">_</span> <span class="nv">message</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">tag</span><span class="p">:</span> <span class="kt"><a href="../Structs/LogTag.html">LogTag</a></span><span class="p">,</span> <span class="nv">file</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="k">#file</span><span class="p">,</span> <span class="nv">function</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="k">#function</span><span class="p">,</span> <span class="nv">line</span><span class="p">:</span> <span class="kt">Int32</span> <span class="o">=</span> <span class="k">#line</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">nonisolated</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">error</span><span class="p">(</span><span class="n">_</span> <span class="nv">message</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">tag</span><span class="p">:</span> <span class="kt"><a href="../Structs/LogTag.html">LogTag</a></span><span class="p">,</span> <span class="nv">file</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="k">#file</span><span class="p">,</span> <span class="nv">function</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="k">#function</span><span class="p">,</span> <span class="nv">line</span><span class="p">:</span> <span class="kt">Int32</span> <span class="o">=</span> <span class="k">#line</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -944,7 +977,7 @@ providing true as parameter.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">nonisolated</span><span class="p">(</span><span class="n">unsafe</span><span class="p">)</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">fatal</span><span class="p">(</span><span class="n">_</span> <span class="nv">message</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">tags</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Structs/LogTag.html">LogTag</a></span><span class="p">]</span> <span class="o">=</span> <span class="p">[],</span> <span class="nv">file</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="k">#file</span><span class="p">,</span> <span class="nv">function</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="k">#function</span><span class="p">,</span> <span class="nv">line</span><span class="p">:</span> <span class="kt">Int32</span> <span class="o">=</span> <span class="k">#line</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">nonisolated</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">fatal</span><span class="p">(</span><span class="n">_</span> <span class="nv">message</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">tags</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Structs/LogTag.html">LogTag</a></span><span class="p">]</span> <span class="o">=</span> <span class="p">[],</span> <span class="nv">file</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="k">#file</span><span class="p">,</span> <span class="nv">function</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="k">#function</span><span class="p">,</span> <span class="nv">line</span><span class="p">:</span> <span class="kt">Int32</span> <span class="o">=</span> <span class="k">#line</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -971,7 +1004,7 @@ providing true as parameter.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">nonisolated</span><span class="p">(</span><span class="n">unsafe</span><span class="p">)</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">fatal</span><span class="p">(</span><span class="n">_</span> <span class="nv">message</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">tag</span><span class="p">:</span> <span class="kt"><a href="../Structs/LogTag.html">LogTag</a></span><span class="p">,</span> <span class="nv">file</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="k">#file</span><span class="p">,</span> <span class="nv">function</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="k">#function</span><span class="p">,</span> <span class="nv">line</span><span class="p">:</span> <span class="kt">Int32</span> <span class="o">=</span> <span class="k">#line</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">nonisolated</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">fatal</span><span class="p">(</span><span class="n">_</span> <span class="nv">message</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">tag</span><span class="p">:</span> <span class="kt"><a href="../Structs/LogTag.html">LogTag</a></span><span class="p">,</span> <span class="nv">file</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="k">#file</span><span class="p">,</span> <span class="nv">function</span><span class="p">:</span> <span class="kt">String</span> <span class="o">=</span> <span class="k">#function</span><span class="p">,</span> <span class="nv">line</span><span class="p">:</span> <span class="kt">Int32</span> <span class="o">=</span> <span class="k">#line</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -986,8 +1019,8 @@ providing true as parameter.</p>
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2025 <a class="link" href="https://github.com/indieSoftware/INLogger" target="_blank" rel="external noopener">indie-Software</a>. All rights reserved. (Last updated: 2025-05-10)</p>
-      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external noopener">jazzy ♪♫ v0.15.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external noopener">Realm</a> project.</p>
+      <p>&copy; 2026 <a class="link" href="" target="_blank" rel="external noopener">indie-Software</a>. All rights reserved. (Last updated: 2026-01-24)</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external noopener">jazzy ♪♫ v0.15.4</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external noopener">Realm</a> project.</p>
     </section>
   </body>
 </html>

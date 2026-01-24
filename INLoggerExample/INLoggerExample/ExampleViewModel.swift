@@ -83,4 +83,17 @@ class ExampleViewModel: ObservableObject {
 		if forceDisabledTagEnabled { tags.append(.forceDisabledTag) }
 		return tags
 	}
+
+	func testFlush() {
+		Task {
+			Logger.info("Enqueing 100 logs", tag: .general)
+			for index in 0 ..< 100 {
+				Logger.debug("Log \(index)", tag: .general)
+			}
+			Logger.shared.log(message: "Logs enqueued, now waiting for them to finish", level: .warn, tags: [.general], processOnThread: true)
+			await Logger.shared.flushQueue()
+			Logger.shared.log(message: "Flush finished", level: .fatal, tags: [.general], processOnThread: true)
+			Logger.debug("Log 100 (has been enqueued after flush)", tag: .general)
+		}
+	}
 }

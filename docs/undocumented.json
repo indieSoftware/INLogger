@@ -121,140 +121,140 @@
     },
     {
       "file": "/Users/sven/Work/Git/indieSoftware/ios-tools/INLogger/Sources/INLogger/Logger/Logger.swift",
-      "line": 99,
-      "symbol": "Logger.debug(_:tags:file:function:line:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/sven/Work/Git/indieSoftware/ios-tools/INLogger/Sources/INLogger/Logger/Logger.swift",
-      "line": 103,
-      "symbol": "Logger.debug(_:tag:file:function:line:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/sven/Work/Git/indieSoftware/ios-tools/INLogger/Sources/INLogger/Logger/Logger.swift",
-      "line": 107,
-      "symbol": "Logger.info(_:tags:file:function:line:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/sven/Work/Git/indieSoftware/ios-tools/INLogger/Sources/INLogger/Logger/Logger.swift",
       "line": 111,
-      "symbol": "Logger.info(_:tag:file:function:line:)",
+      "symbol": "Logger.debug(_:tags:file:function:line:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/sven/Work/Git/indieSoftware/ios-tools/INLogger/Sources/INLogger/Logger/Logger.swift",
       "line": 115,
-      "symbol": "Logger.warn(_:tags:file:function:line:)",
+      "symbol": "Logger.debug(_:tag:file:function:line:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/sven/Work/Git/indieSoftware/ios-tools/INLogger/Sources/INLogger/Logger/Logger.swift",
       "line": 119,
-      "symbol": "Logger.warn(_:tag:file:function:line:)",
+      "symbol": "Logger.info(_:tags:file:function:line:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/sven/Work/Git/indieSoftware/ios-tools/INLogger/Sources/INLogger/Logger/Logger.swift",
       "line": 123,
-      "symbol": "Logger.error(_:tags:file:function:line:)",
+      "symbol": "Logger.info(_:tag:file:function:line:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/sven/Work/Git/indieSoftware/ios-tools/INLogger/Sources/INLogger/Logger/Logger.swift",
       "line": 127,
-      "symbol": "Logger.error(_:tag:file:function:line:)",
+      "symbol": "Logger.warn(_:tags:file:function:line:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/sven/Work/Git/indieSoftware/ios-tools/INLogger/Sources/INLogger/Logger/Logger.swift",
       "line": 131,
-      "symbol": "Logger.fatal(_:tags:file:function:line:)",
+      "symbol": "Logger.warn(_:tag:file:function:line:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/sven/Work/Git/indieSoftware/ios-tools/INLogger/Sources/INLogger/Logger/Logger.swift",
       "line": 135,
+      "symbol": "Logger.error(_:tags:file:function:line:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/sven/Work/Git/indieSoftware/ios-tools/INLogger/Sources/INLogger/Logger/Logger.swift",
+      "line": 139,
+      "symbol": "Logger.error(_:tag:file:function:line:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/sven/Work/Git/indieSoftware/ios-tools/INLogger/Sources/INLogger/Logger/Logger.swift",
+      "line": 143,
+      "symbol": "Logger.fatal(_:tags:file:function:line:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/sven/Work/Git/indieSoftware/ios-tools/INLogger/Sources/INLogger/Logger/Logger.swift",
+      "line": 147,
       "symbol": "Logger.fatal(_:tag:file:function:line:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/sven/Work/Git/indieSoftware/ios-tools/INLogger/Sources/INLogger/Logger/Logger.swift",
-      "line": 142,
+      "line": 154,
       "symbol": "Logger.debug(_:tags:file:function:line:)",
       "symbol_kind": "source.lang.swift.decl.function.method.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/sven/Work/Git/indieSoftware/ios-tools/INLogger/Sources/INLogger/Logger/Logger.swift",
-      "line": 147,
+      "line": 159,
       "symbol": "Logger.debug(_:tag:file:function:line:)",
       "symbol_kind": "source.lang.swift.decl.function.method.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/sven/Work/Git/indieSoftware/ios-tools/INLogger/Sources/INLogger/Logger/Logger.swift",
-      "line": 152,
+      "line": 164,
       "symbol": "Logger.info(_:tags:file:function:line:)",
       "symbol_kind": "source.lang.swift.decl.function.method.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/sven/Work/Git/indieSoftware/ios-tools/INLogger/Sources/INLogger/Logger/Logger.swift",
-      "line": 157,
+      "line": 169,
       "symbol": "Logger.info(_:tag:file:function:line:)",
       "symbol_kind": "source.lang.swift.decl.function.method.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/sven/Work/Git/indieSoftware/ios-tools/INLogger/Sources/INLogger/Logger/Logger.swift",
-      "line": 162,
+      "line": 174,
       "symbol": "Logger.warn(_:tags:file:function:line:)",
       "symbol_kind": "source.lang.swift.decl.function.method.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/sven/Work/Git/indieSoftware/ios-tools/INLogger/Sources/INLogger/Logger/Logger.swift",
-      "line": 167,
+      "line": 179,
       "symbol": "Logger.warn(_:tag:file:function:line:)",
       "symbol_kind": "source.lang.swift.decl.function.method.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/sven/Work/Git/indieSoftware/ios-tools/INLogger/Sources/INLogger/Logger/Logger.swift",
-      "line": 172,
+      "line": 184,
       "symbol": "Logger.error(_:tags:file:function:line:)",
       "symbol_kind": "source.lang.swift.decl.function.method.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/sven/Work/Git/indieSoftware/ios-tools/INLogger/Sources/INLogger/Logger/Logger.swift",
-      "line": 177,
+      "line": 189,
       "symbol": "Logger.error(_:tag:file:function:line:)",
       "symbol_kind": "source.lang.swift.decl.function.method.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/sven/Work/Git/indieSoftware/ios-tools/INLogger/Sources/INLogger/Logger/Logger.swift",
-      "line": 182,
+      "line": 194,
       "symbol": "Logger.fatal(_:tags:file:function:line:)",
       "symbol_kind": "source.lang.swift.decl.function.method.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/sven/Work/Git/indieSoftware/ios-tools/INLogger/Sources/INLogger/Logger/Logger.swift",
-      "line": 187,
+      "line": 199,
       "symbol": "Logger.fatal(_:tag:file:function:line:)",
       "symbol_kind": "source.lang.swift.decl.function.method.static",
       "warning": "undocumented"
